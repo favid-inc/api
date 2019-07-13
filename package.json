@@ -1,6 +1,6 @@
 {
   "name": "@favid-inc/model",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Models for Favid Project",
   "homepage": "https://github.com/favid-inc/model#readme",
   "repository": {
@@ -13,7 +13,8 @@
   "license": "UNLICENSED",
   "author": "Favid Team",
   "files": [
-    "lib"
+    "index.js",
+    "index.d.ts"
   ],
   "main": "index.js",
   "types": "index.d.ts",
