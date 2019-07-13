@@ -1,0 +1,6 @@
+*
+!lib/**/*
+!package.json
+!**/*.md
+!index.js
+!index.d.ts
