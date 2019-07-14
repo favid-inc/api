@@ -5,5 +5,4 @@
 node_modules
 
 # build
-index.js
-index.d.ts
+lib

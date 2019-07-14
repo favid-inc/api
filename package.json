@@ -1,20 +1,20 @@
 {
-  "name": "@favid-inc/model",
-  "version": "1.0.3",
-  "description": "Models for Favid Project",
-  "homepage": "https://github.com/favid-inc/model#readme",
+  "name": "@favid-inc/api",
+  "version": "1.1.0",
+  "description": "API for Favid Project",
+  "homepage": "https://github.com/favid-inc/api#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/favid-inc/model.git"
+    "url": "git+https://github.com/favid-inc/api.git"
   },
   "bugs": {
-    "url": "https://github.com/favid-inc/model/issues"
+    "url": "https://github.com/favid-inc/api/issues"
   },
   "license": "UNLICENSED",
   "author": "Favid Team",
   "files": [
     "index.js",
-    "index.d.ts"
+    "lib"
   ],
   "main": "index.js",
   "types": "index.d.ts",
