@@ -1,6 +1,6 @@
 import { ArtistModel } from '../models';
 
-export interface Root {
+export interface ArtistsByTermSearch {
   hits: Hits;
 }
 
