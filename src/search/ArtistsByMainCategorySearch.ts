@@ -19,10 +19,6 @@ interface Bucket {
 }
 
 interface ByTopHit {
-  hits: Hits;
-}
-
-interface Hits {
   hits: Hit[];
 }
 
