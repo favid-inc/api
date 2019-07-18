@@ -1,6 +1,10 @@
 'use strict';
-function __export(m) {
-  for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+
+function exportModule(module) {
+  for (var key in module) 
+    if (!Object.prototype.hasOwnProperty.call(exports, key))
+      exports[key] = module[key];
 }
+
 Object.defineProperty(exports, '__esModule', { value: true });
-__export(require('./lib'));
+exportModule(require('./lib'));

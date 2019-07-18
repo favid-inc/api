@@ -1,5 +1,5 @@
-import { ArtistModel, ARTIST } from '../../models';
-import { SEARCH_BY } from '../constants';
+import { ARTIST, ArtistModel } from "../../models";
+import { SEARCH_BY } from "../constants";
 
 export const ARTIST_SEARCH_BY_TERM = `${ARTIST}-${SEARCH_BY}-term`;
 

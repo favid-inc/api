@@ -1,9 +1,9 @@
-import { Model } from '../Model';
+import { Model } from "../Model";
 
 export interface OrderModel extends Model {
   customerId?: string;
   artistId?: string;
-  status?: 'OP' | 'RA' | 'DO';
+  status?: "OP" | "RA" | "DO";
 
   myName?: string;
   isGift?: boolean;

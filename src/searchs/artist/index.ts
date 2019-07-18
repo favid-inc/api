@@ -1,2 +1,2 @@
-export * from './ArtistSearchByMainCategory';
-export * from './ArtistSearchByTerm';
+export * from "./ArtistSearchByMainCategory";
+export * from "./ArtistSearchByTerm";

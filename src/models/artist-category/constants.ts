@@ -1,1 +1,1 @@
-export const ARTIST_CATEGORY = 'artist-category';
+export const ARTIST_CATEGORY = "artist-category";

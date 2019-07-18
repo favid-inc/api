@@ -1,1 +1,1 @@
-export const ARTIST = 'artist';
+export const ARTIST = "artist";

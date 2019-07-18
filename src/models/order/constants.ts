@@ -1,1 +1,1 @@
-export const ORDER = 'order';
+export const ORDER = "order";

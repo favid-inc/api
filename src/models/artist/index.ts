@@ -1,2 +1,2 @@
-export * from './ArtistModel';
-export * from './constants';
+export * from "./ArtistModel";
+export * from "./constants";

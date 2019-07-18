@@ -1,6 +1,6 @@
 {
   "name": "@favid-inc/api",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "API for Favid Project",
   "homepage": "https://github.com/favid-inc/api#readme",
   "repository": {
@@ -22,12 +22,12 @@
   "scripts": {
     "build": "rm -rf lib && tsc",
     "deploy": "npm publish",
-    "lint": "node node_modules/@favid-inc/eslint-config/lib/cli.js",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "prepublish": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
-    "@favid-inc/eslint-config": "^1.0.1",
+    "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   },
   "engines": {

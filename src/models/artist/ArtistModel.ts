@@ -1,4 +1,4 @@
-import { ArtistCategoryModel } from '../artist-category';
+import { ArtistCategoryModel } from "../artist-category";
 
 export interface ArtistModel {
   id: string;
