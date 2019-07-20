@@ -1,7 +1,4 @@
-import { ARTIST, ArtistModel } from "../../models";
-import { SEARCH_BY } from "../constants";
-
-export const ARTIST_SEARCH_BY_MAIN_CATEGORY = `${ARTIST}_${SEARCH_BY}_main_category`;
+import { ArtistModel } from "./ArtistModel";
 
 export type ArtistSearchByMainCategoryArgument = void;
 
