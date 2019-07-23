@@ -1,9 +1,10 @@
 import { Model } from "../Model";
+import { OrderStatus } from "./constants";
 
 export interface OrderModel extends Model {
   customerId?: string;
   artistId?: string;
-  status?: "OP" | "RA" | "DO";
+  status?: OrderStatus;
 
   myName?: string;
   isGift?: boolean;
