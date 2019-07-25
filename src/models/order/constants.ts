@@ -1,8 +1,9 @@
 export const ORDER = "order";
 
 export enum OrderFlow {
-  CREATE = "order_flow_create",
+  PLACE = "order_flow_place",
   DECLINE = "order_flow_decline",
+  ACCEPT = "order_flow_accept",
 }
 
 export enum OrderStatus {
