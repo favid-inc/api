@@ -4,11 +4,11 @@ import { OrderStatus } from "./constants";
 export interface OrderModel extends Model {
   artistId?: string;
   status?: OrderStatus;
-  
+
   isGift?: boolean;
   theirName?: string;
   videoInstructions?: string;
-  
+
   customerId?: string;
   customerName?: string;
   customerPhoto?: string;
