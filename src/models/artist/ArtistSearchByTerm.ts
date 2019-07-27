@@ -1,6 +1,8 @@
 import { ArtistModel } from "./ArtistModel";
 
-export type ArtistSearchByTermArgument = string;
+export interface ArtistSearchByTermArgument {
+  q: string;
+}
 
 export interface ArtistSearchByTermResult {
   // took: number;
