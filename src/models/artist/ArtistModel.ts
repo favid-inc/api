@@ -14,4 +14,5 @@ export interface ArtistModel extends Model, User {
   onLine?: boolean;
   price?: number;
   responseTime?: number;
+  isRegisterApproved?: boolean;
 }
