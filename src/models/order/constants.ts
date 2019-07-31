@@ -19,6 +19,14 @@ export interface OrderFlowPlaceOrderResponse {
   order: OrderModel;
 }
 
+export interface OrderFlowDeclineOrderArguments {
+  declinedByArtistDescription: string;
+}
+
+export interface OrderFlowDeclineOrderResponse {
+  order: OrderModel;
+}
+
 export enum OrderStatus {
   OPENED = "OP",
   DECLINED_BY_ARTIST = "DA",

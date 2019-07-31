@@ -18,7 +18,7 @@ export interface OrderModel extends Model {
 
   price?: number;
   creationDate?: number;
-  refusedByArtistDescription?: string;
+  declinedByArtistDescription?: string;
 
   videoCreationDate?: number;
   video?: string;
