@@ -3,16 +3,21 @@ import { Model } from "../Model";
 import User from "../User";
 
 export interface ArtistModel extends Model, User {
-  photo?: string;
-  about?: string;
   artisticName?: string;
-  name?: string;
-  mainCategory?: ArtistCategoryModel;
+  biography?: string;
   categories?: ArtistCategoryModel[];
-  phoneNumber?: string;
   location?: string;
-  onLine?: boolean;
+  mainCategory?: ArtistCategoryModel;
+  name?: string;
+  phoneNumber?: string;
+  photo?: string;
   price?: number;
-  responseTime?: number;
-  isRegisterApproved?: boolean;
+  status?: ArtistStatus;
+}
+
+export enum ArtistStatus {
+  ACTIVE = "A",
+  INACTIVE = "I",
+  BLOCKED = "B",
+  OUTCAST = "O",
 }
