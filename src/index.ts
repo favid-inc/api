@@ -1,2 +1,3 @@
 export * from "./model";
-export * as AppArtistApi from "./model";
+import * as AppArtist from "./app-artist";
+export { AppArtist };
