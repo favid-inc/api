@@ -1,4 +1,4 @@
-import { Model } from "../Model";
+import { Model } from "../model";
 import { OrderStatus } from "./constants";
 
 export interface OrderModel extends Model {

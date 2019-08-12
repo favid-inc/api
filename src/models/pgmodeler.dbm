@@ -5,23 +5,20 @@ CAUTION: Do not modify this file unless you know what you are doing.
 -->
 <dbmodel pgmodeler-ver="0.9.1" last-position="0,0" last-zoom="1"
 	 default-schema="public" default-owner="postgres">
-<database name="new_database" is-template="false" allow-conns="true">
+<database name="favid-dev" is-template="false" allow-conns="true">
 </database>
 
 <schema name="public" fill-color="#e1e1e1" sql-disabled="true">
 </schema>
 
-<table name="artist">
+<table name="Artist">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="200" y="180"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
-	<column name="_deleted" not-null="true" default-value="false">
-		<type name="boolean" length="0"/>
-	</column>
-	<column name="artistic_name">
+	<column name="artisticName">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="biography">
@@ -45,25 +42,25 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="photo">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="status" not-null="true">
+	<column name="status" not-null="true" default-value="'A'">
 		<type name="char" length="1"/>
 	</column>
 	<column name="price">
 		<type name="numeric" length="0"/>
 	</column>
-	<constraint name="artist_pk" type="pk-constr" table="public.artist">
+	<constraint name="artist_pk" type="pk-constr" table="public.&quot;Artist&quot;">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="artist_category">
+<table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="500" y="200"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
-	<constraint name="artist_category_pk" type="pk-constr" table="public.artist_category">
+	<constraint name="artist_category_pk" type="pk-constr" table="public.&quot;ArtistCategory&quot;">
 		<columns names="value" ref-type="src-columns"/>
 	</constraint>
 </table>

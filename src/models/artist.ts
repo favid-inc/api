@@ -1,13 +1,15 @@
-import { ArtistCategoryModel } from "../artist-category";
-import { Model } from "../Model";
-import User from "../User";
+import { ArtistCategory } from "./artist-category";
+import { Model } from "./model";
+import User from "./User";
 
-export interface ArtistModel extends Model, User {
+export const ARTIST = "Artist";
+
+export interface Artist extends Model, User {
   artisticName?: string;
   biography?: string;
-  categories?: ArtistCategoryModel[];
+  categories?: ArtistCategory[];
   location?: string;
-  mainCategory?: ArtistCategoryModel;
+  mainCategory?: ArtistCategory;
   name?: string;
   phoneNumber?: string;
   photo?: string;
