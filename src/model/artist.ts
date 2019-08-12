@@ -8,10 +8,11 @@ export interface Artist extends Model, User {
   artisticName?: string;
   biography?: string;
   categories?: ArtistCategory[];
+  email?: string;
   location?: string;
   mainCategory?: ArtistCategory;
   name?: string;
-  phoneNumber?: string;
+  phone?: string;
   photo?: string;
   price?: number;
   status?: ArtistStatus;

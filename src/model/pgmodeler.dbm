@@ -27,6 +27,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="categories">
 		<type name="varchar" length="255" dimension="1"/>
 	</column>
+	<column name="email">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="location">
 		<type name="varchar" length="255"/>
 	</column>
@@ -36,7 +39,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="name">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="phoneNumber">
+	<column name="phone">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="photo">
