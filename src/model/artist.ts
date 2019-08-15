@@ -1,10 +1,9 @@
 import { ArtistCategory } from "./artist-category";
 import { Model } from "./model";
-import User from "./User";
 
 export const ARTIST = "Artist";
 
-export interface Artist extends Model, User {
+export interface Artist extends Model {
   artisticName?: string;
   biography?: string;
   categories?: ArtistCategory[];
@@ -13,9 +12,10 @@ export interface Artist extends Model, User {
   mainCategory?: ArtistCategory;
   name?: string;
   phone?: string;
-  photo?: string;
+  photoUri?: string;
   price?: number;
   status?: ArtistStatus;
+  userUid?: string;
 }
 
 export enum ArtistStatus {

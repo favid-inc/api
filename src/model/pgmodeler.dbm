@@ -14,7 +14,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Artist">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="200" y="180"/>
+	<position x="360" y="140"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -42,7 +42,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="phone">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="photo">
+	<column name="photoUri">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="status" not-null="true" default-value="'A'">
@@ -51,7 +51,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="price">
 		<type name="numeric" length="0"/>
 	</column>
-	<constraint name="artist_pk" type="pk-constr" table="public.&quot;Artist&quot;">
+	<column name="userUid">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="Artist_pk" type="pk-constr" table="public.&quot;Artist&quot;">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
@@ -59,7 +62,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="500" y="200"/>
+	<position x="60" y="120"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
@@ -67,5 +70,90 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<columns names="value" ref-type="src-columns"/>
 	</constraint>
 </table>
+
+<table name="Order">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="840" y="160"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="artistName">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="artistPhoto">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="customerUserUid">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="customerName">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="status">
+		<type name="char" length="1"/>
+	</column>
+	<column name="statusPlacedDate">
+		<type name="int8" length="0"/>
+	</column>
+	<column name="statusDeclinedDate">
+		<type name="int8" length="0"/>
+	</column>
+	<column name="statusDeclinedDescription">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="statusFulfilledDate">
+		<type name="int8" length="0"/>
+	</column>
+	<column name="paymentStatus">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="instructions">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="isGift">
+		<type name="bool" length="0"/>
+	</column>
+	<column name="price">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="receiverName">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="videoUri">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="videoThumbnailUri">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="Order_pk" type="pk-constr" table="public.&quot;Order&quot;">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="artistId" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="Artist_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="Artist_has_many_Order" type="rel1n"
+	 src-col-pattern="artistId"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#f27497"
+	 src-table="public.&quot;Artist&quot;"
+	 dst-table="public.&quot;Order&quot;"
+	 src-required="false" dst-required="false"/>
+
+<index name="Artist_userUid_idx" table="public.&quot;Artist&quot;"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="&quot;userUid&quot;"/>
+		</idxelement>
+</index>
 
 </dbmodel>
