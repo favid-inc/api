@@ -11,7 +11,7 @@ export interface Artist extends Model {
   location?: string;
   mainCategory?: ArtistCategory;
   name?: string;
-  phone?: string;
+  phoneNumber?: string;
   photoUri?: string;
   price?: number;
   status?: ArtistStatus;

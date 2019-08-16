@@ -39,7 +39,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="name">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="phone">
+	<column name="phoneNumber">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="photoUri">
