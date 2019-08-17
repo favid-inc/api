@@ -3,7 +3,7 @@ import { Model } from "../model";
 export const ORDER = "Order";
 
 export interface Order extends Model {
-  artistId?: string;
+  artistId?: number;
   artistName?: string;
   artistPhotoUri?: string;
 
