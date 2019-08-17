@@ -1,6 +1,6 @@
 import { Model } from "../model";
 
-export const ORDER = "order";
+export const ORDER = "Order";
 
 export interface Order extends Model {
   artistId?: string;
