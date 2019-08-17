@@ -14,6 +14,7 @@ export interface Artist extends Model {
   phoneNumber?: string;
   photoUri?: string;
   price?: number;
+  registerStatus: ArtistRegisterStatus;
   status?: ArtistStatus;
   userUid?: string;
 }
@@ -23,4 +24,10 @@ export enum ArtistStatus {
   INACTIVE = "I",
   BLOCKED = "B",
   OUTCAST = "O",
+}
+
+export enum ArtistRegisterStatus {
+  APROVED = "A",
+  DENIED = "D",
+  PENDING = "P",
 }
