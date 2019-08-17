@@ -49,19 +49,19 @@ export interface Delete<T extends Model> extends Action {
   Response: void;
 }
 
-interface WhereElement {
+export interface WhereElement {
   attr: string;
   exp: "LIKE" | "IN" | "IS" | ">" | ">=" | "=" | "<=" | "<";
   value: any;
   negate?: boolean;
 }
 
-interface OrderByElement {
+export interface OrderByElement {
   attr: string;
   exp?: "ASC" | "DESC";
 }
 
-interface FindArgs {
+export interface FindArgs {
   limit?: number;
   offset?: number;
   where?: WhereElement[];
