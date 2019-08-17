@@ -21,8 +21,9 @@ export interface Post<T extends Model> extends Action {
 export interface Get<T extends Model> extends Action {
   Request: Action["Request"] & {
     method: "GET";
+    query?: FindArgs;
   };
-  Response: T | { total: number; list: T[] };
+  Response: { total: number; list: T[] };
 }
 
 export interface Patch<T extends Model> extends Action {
@@ -46,4 +47,23 @@ export interface Delete<T extends Model> extends Action {
     method: "DELETE";
   };
   Response: void;
+}
+
+interface WhereElement {
+  attr: string;
+  exp: "LIKE" | "IN" | "IS" | ">" | ">=" | "=" | "<=" | "<";
+  value: any;
+  negate?: boolean;
+}
+
+interface OrderByElement {
+  attr: string;
+  exp?: "ASC" | "DESC";
+}
+
+interface FindArgs {
+  limit?: number;
+  offset?: number;
+  where?: WhereElement[];
+  orderBy?: OrderByElement[];
 }
