@@ -14,7 +14,7 @@ interface Request extends AxiosRequestConfig {
     email: string;
     invoice_id: string;
     items: Item[];
-    keep_dunning: string;
+    keep_dunning: boolean;
     months: number;
     order_id: string;
     payer: Payer;

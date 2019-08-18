@@ -1,12 +1,12 @@
 import { Artist } from "../model";
 import { Action } from "./action";
 
-export interface FindArtistsGroupingByMainCategory extends Action {
+export interface ListArtistsGroupingByMainCategory extends Action {
   Request: {
-    url: "/FindArtistsGroupingByMainCategory";
+    url: "/ListArtistsGroupingByMainCategory";
     method: "POST";
   };
   Response: {
-    [mainCategory: string]: Artist;
+    [mainCategory: string]: Artist[];
   };
 }
