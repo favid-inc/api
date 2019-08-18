@@ -1,6 +1,6 @@
 {
   "name": "@favid-inc/api",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "description": "API for Favid Project",
   "homepage": "https://github.com/favid-inc/api#readme",
   "repository": {
@@ -25,7 +25,9 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/axios": "^0.14.0"
+  },
   "devDependencies": {
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
