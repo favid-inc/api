@@ -1,3 +1,5 @@
+import { DirectCharge, PaymentToken } from "../iugu";
+
 import { Order } from "../model";
 import { Action } from "./action";
 
@@ -22,7 +24,11 @@ export interface PayOrder extends Action {
   Request: {
     url: "/PayOrder";
     method: "POST";
-    data: Order;
+    data: {
+      order: Order;
+      paymentToken: PaymentToken["Request"]["data"];
+      directCharge: DirectCharge["Request"]["data"];
+    };
   };
-  Response: Order;
+  Response: DirectCharge["Response"];
 }
