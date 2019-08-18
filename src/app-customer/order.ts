@@ -17,3 +17,12 @@ export interface PlaceOrder extends Action {
   };
   Response: Order;
 }
+
+export interface PayOrder extends Action {
+  Request: {
+    url: "/PayOrder";
+    method: "POST";
+    data: Order;
+  };
+  Response: Order;
+}
