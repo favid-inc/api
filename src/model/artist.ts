@@ -17,6 +17,7 @@ export interface Artist extends Model {
   registerStatus?: ArtistRegisterStatus;
   status?: ArtistStatus;
   userUid?: string;
+  iuguAccountId?: string;
 }
 
 export enum ArtistStatus {

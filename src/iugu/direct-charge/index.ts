@@ -1,2 +1,2 @@
 export * from "./direct-charge";
-export * from "./token";
+export * from "./payment-token";

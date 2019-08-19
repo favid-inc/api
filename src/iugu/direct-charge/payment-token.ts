@@ -29,7 +29,7 @@ type Response = AxiosResponse &
         status: 200;
         data: {
           id: string;
-          method: string;
+          method: "credit_card";
           extra_info: {
             brand: string;
             holder_name: string;
