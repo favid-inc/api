@@ -6,7 +6,7 @@ export interface CreateSubAccount {
 }
 
 type Request = AxiosRequestConfig & {
-  url: "charge";
+  url: "create_account";
   method: "POST";
   data: {
     name: string;
