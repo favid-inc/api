@@ -45,6 +45,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="photoUri">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="registerStatus">
+		<type name="char" length="1"/>
+	</column>
 	<column name="status" not-null="true" default-value="'A'">
 		<type name="char" length="1"/>
 	</column>
