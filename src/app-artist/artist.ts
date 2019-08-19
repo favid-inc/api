@@ -20,6 +20,15 @@ export interface UpdateProfile extends Action {
   Response: Artist;
 }
 
+export interface UploadProfilePhoto extends Action {
+  Request: {
+    url: "/UploadProfilePhoto";
+    method: "POST";
+    data: FormData;
+  };
+  Response: Artist;
+}
+
 export interface LoadProfile extends Action {
   Request: {
     url: "/LoadProfile";
