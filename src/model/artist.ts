@@ -17,7 +17,15 @@ export interface Artist extends Model {
   registerStatus?: ArtistRegisterStatus;
   status?: ArtistStatus;
   userUid?: string;
-  iuguAccountId?: string;
+
+  iuguSubAccountId?: string;
+  iuguSubAccountMetadata?: {
+    account_id?: string;
+    live_api_token?: string;
+    name?: string;
+    test_api_token?: string;
+    user_token?: string;
+  };
 }
 
 export enum ArtistStatus {

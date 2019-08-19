@@ -5,7 +5,7 @@ export interface DirectCharge {
   Response: Response;
 }
 
-interface Request extends AxiosRequestConfig {
+type Request = AxiosRequestConfig & {
   url: "charge";
   method: "POST";
   data: {
@@ -30,7 +30,7 @@ interface Request extends AxiosRequestConfig {
     | {
         customer_payment_method_id: string;
       });
-}
+};
 
 interface Payer {
   address: Address;

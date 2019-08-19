@@ -5,7 +5,7 @@ export interface PaymentToken {
   Response: Response;
 }
 
-interface Request extends AxiosRequestConfig {
+type Request = AxiosRequestConfig & {
   url: "payment_token";
   method: "POST";
   data: {
@@ -21,7 +21,7 @@ interface Request extends AxiosRequestConfig {
       year: string;
     };
   };
-}
+};
 
 type Response = AxiosResponse &
   (
