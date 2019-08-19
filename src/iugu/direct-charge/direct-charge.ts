@@ -10,14 +10,12 @@ type Request = AxiosRequestConfig & {
   method: "POST";
   data: {
     restrict_payment_method: boolean;
-    customer_id: string;
+    customer_id?: string;
     discount_cents: number;
-    email: string;
-    invoice_id: string;
     items: Item[];
     keep_dunning: boolean;
-    months: number;
-    order_id: string;
+    months?: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+    order_id?: string;
     payer: Payer;
   } & (
     | {
@@ -29,7 +27,14 @@ type Request = AxiosRequestConfig & {
       }
     | {
         customer_payment_method_id: string;
-      });
+      }) &
+    (
+      | {
+          email?: string;
+        }
+      | {
+          invoice_id?: string;
+        });
 };
 
 interface Payer {
@@ -57,7 +62,7 @@ interface Item {
   quantity: number;
 }
 
-type Response = AxiosResponse &
+type Response = AxiosResponse<void> &
   (
     | {
         status: 200;

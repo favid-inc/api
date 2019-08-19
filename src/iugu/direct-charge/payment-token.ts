@@ -23,7 +23,7 @@ type Request = AxiosRequestConfig & {
   };
 };
 
-type Response = AxiosResponse &
+type Response = AxiosResponse<void> &
   (
     | {
         status: 200;

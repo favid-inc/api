@@ -6,22 +6,22 @@ export interface CreateSubAccount {
 }
 
 type Request = AxiosRequestConfig & {
-  url: "create_account";
+  url: "marketplace/create_account";
   method: "POST";
-  data: {
-    name: string;
-    commissions: {
-      cents: number;
-      percent: string;
-      credit_card_cents: number;
-      credit_card_percent: string;
-      bank_slip_cents: number;
-      bank_slip_percent: string;
+  data?: {
+    name?: string;
+    commissions?: {
+      cents?: number;
+      percent?: number;
+      credit_card_cents?: number;
+      credit_card_percent?: number;
+      bank_slip_cents?: number;
+      bank_slip_percent?: number;
     };
   };
 };
 
-type Response = AxiosResponse & {
+type Response = AxiosResponse<void> & {
   status: 200;
   data: {
     account_id: string;

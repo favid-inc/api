@@ -30,5 +30,5 @@ export interface PayOrder extends Action {
       directCharge: DirectCharge["Request"]["data"];
     };
   };
-  Response: DirectCharge["Response"];
+  Response: DirectCharge["Response"]["data"];
 }
