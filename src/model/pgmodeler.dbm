@@ -45,10 +45,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="photoUri">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="registerStatus">
+	<column name="registerStatus" default-value="'P'">
 		<type name="char" length="1"/>
 	</column>
-	<column name="status" not-null="true" default-value="'A'">
+	<column name="status" not-null="true" default-value="'I'">
 		<type name="char" length="1"/>
 	</column>
 	<column name="price">
@@ -87,7 +87,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
-	<column name="artistName">
+	<column name="artistArtisticName">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="artistPhoto">

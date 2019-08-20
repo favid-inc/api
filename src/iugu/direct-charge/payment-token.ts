@@ -6,18 +6,18 @@ export interface PaymentToken {
 }
 
 type Request = AxiosRequestConfig & {
-  url: "payment_token";
+  url: "/payment_token";
   method: "POST";
   data: {
     test: boolean;
     account_id: string;
     method: string;
     data: {
-      number: string;
-      verification_value: string;
       first_name: string;
       last_name: string;
       month: string;
+      number: string;
+      verification_value: string;
       year: string;
     };
   };
@@ -31,10 +31,10 @@ type Response = AxiosResponse<void> &
           id: string;
           method: "credit_card";
           extra_info: {
-            brand: string;
-            holder_name: string;
-            display_number: string;
             bin: string;
+            brand: string;
+            display_number: string;
+            holder_name: string;
             month: number;
             year: number;
           };

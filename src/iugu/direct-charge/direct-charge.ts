@@ -6,7 +6,7 @@ export interface DirectCharge {
 }
 
 type Request = AxiosRequestConfig & {
-  url: "charge";
+  url: "/charge";
   method: "POST";
   data: {
     restrict_payment_method: boolean;

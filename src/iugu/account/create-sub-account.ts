@@ -6,7 +6,7 @@ export interface CreateSubAccount {
 }
 
 type Request = AxiosRequestConfig & {
-  url: "marketplace/create_account";
+  url: "/marketplace/create_account";
   method: "POST";
   data?: {
     name?: string;

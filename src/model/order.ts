@@ -4,7 +4,7 @@ export const ORDER = "Order";
 
 export interface Order extends Model {
   artistId?: number;
-  artistName?: string;
+  artistArtisticName?: string;
   artistPhotoUri?: string;
 
   customerUserUid?: string;
