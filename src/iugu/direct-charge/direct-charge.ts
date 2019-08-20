@@ -14,7 +14,6 @@ type Request = AxiosRequestConfig & {
     discount_cents: number;
     items: Item[];
     keep_dunning: boolean;
-    months?: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     order_id?: string;
     payer: Payer;
   } & (
@@ -24,6 +23,7 @@ type Request = AxiosRequestConfig & {
       }
     | {
         token: string;
+        months?: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
       }
     | {
         customer_payment_method_id: string;
