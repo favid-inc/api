@@ -1,13 +1,15 @@
 import { Artist } from "../model";
 import { Action } from "./action";
 
+type Rate = 0 | 1 | 2 | 3 | 4 | 5;
+
 export interface ListArtistsGroupingByMainCategory extends Action {
   Request: {
     url: "/ListArtistsGroupingByMainCategory";
     method: "GET";
   };
   Response: {
-    [mainCategory: string]: Artist[];
+    [mainCategory: string]: Array<Artist & { rate: Rate; rates: Rate; follower: boolean; followers: number }>;
   };
 }
 
@@ -16,7 +18,7 @@ export interface RateArtist extends Action {
     url: "/RateArtist";
     method: "POST";
     data: {
-      rate: 0 | 1 | 2 | 3 | 4 | 5;
+      rate: Rate;
       artistId: Artist["id"];
     };
   };

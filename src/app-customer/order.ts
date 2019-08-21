@@ -8,7 +8,7 @@ export interface ListOrders extends Action {
     url: "/ListOrders";
     method: "GET";
   };
-  Response: Order[];
+  Response: Array<Order & { like: boolean; likes: number }>;
 }
 
 export interface PlaceOrder extends Action {
