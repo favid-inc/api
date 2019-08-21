@@ -14,7 +14,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Artist">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="380" y="140"/>
+	<position x="500" y="160"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -71,7 +71,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="60" y="120"/>
+	<position x="520" y="500"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
@@ -83,14 +83,14 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Order">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="900" y="140"/>
+	<position x="60" y="200"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
 	<column name="artistArtisticName">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="artistPhoto">
+	<column name="artistPhotoUri">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="customerUserUid">
@@ -162,6 +162,132 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="&quot;userUid&quot;"/>
+		</idxelement>
+</index>
+
+<table name="ArtistFollower">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="940" y="360"/>
+	<column name="date">
+		<type name="int8" length="0"/>
+	</column>
+	<column name="userUid">
+		<type name="varchar" length="255"/>
+	</column>
+
+	<customidxs object-type="column">
+		<object name="artistId" index="0"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="Artist_fk" index="0"/>
+	</customidxs>
+</table>
+
+<relationship name="Artist_has_many_ArtistLike" type="rel1n"
+	 src-col-pattern="artistId"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#6874be"
+	 src-table="public.&quot;Artist&quot;"
+	 dst-table="public.&quot;ArtistFollower&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="117.008" y="-22.7607"/>
+	</label>
+</relationship>
+
+<table name="ArtistRate">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="940" y="60"/>
+	<column name="date">
+		<type name="int8" length="0"/>
+	</column>
+	<column name="userUid">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="value">
+		<type name="smallint" length="0"/>
+	</column>
+
+	<customidxs object-type="column">
+		<object name="artistId" index="0"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="Artist_fk" index="0"/>
+	</customidxs>
+</table>
+
+<relationship name="Artist_has_many_ArtistRate" type="rel1n"
+	 src-col-pattern="artistId"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#41f106"
+	 src-table="public.&quot;Artist&quot;"
+	 dst-table="public.&quot;ArtistRate&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="108.508" y="57.2393"/>
+	</label>
+</relationship>
+
+<table name="OrderLike">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="120" y="40"/>
+	<column name="date">
+		<type name="int8" length="0"/>
+	</column>
+	<column name="userUid">
+		<type name="varchar" length="255"/>
+	</column>
+
+	<customidxs object-type="column">
+		<object name="orderId" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="Order_fk" index="0"/>
+	</customidxs>
+</table>
+
+<relationship name="Order_has_many_OrderLike" type="rel1n"
+	 src-col-pattern="orderId"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#d19c4c"
+	 src-table="public.&quot;Order&quot;"
+	 dst-table="public.&quot;OrderLike&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="110.164" y="-16.7591"/>
+	</label>
+</relationship>
+
+<index name="ArtistRate_userUid_idx" table="public.&quot;ArtistRate&quot;"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="&quot;userUid&quot;"/>
+		</idxelement>
+</index>
+
+<index name="OrderLike_userUid_idx" table="public.&quot;OrderLike&quot;"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="&quot;userUid&quot;"/>
+		</idxelement>
+</index>
+
+<index name="ArtistFollower_userUid_idx" table="public.&quot;ArtistFollower&quot;"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="&quot;artistId&quot;"/>
 		</idxelement>
 </index>
 

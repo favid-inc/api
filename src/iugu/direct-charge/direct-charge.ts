@@ -5,6 +5,8 @@ export interface DirectCharge {
   Response: Response;
 }
 
+export type DirectChargeMethod = "bank_slip";
+
 type Request = AxiosRequestConfig & {
   url: "/charge";
   method: "POST";
@@ -18,8 +20,8 @@ type Request = AxiosRequestConfig & {
     payer: Payer;
   } & (
     | {
-        bank_slip_extra_days: number;
-        method: "bank_slip";
+        bank_slip_extra_days?: number;
+        method: DirectChargeMethod & "bank_slip";
       }
     | {
         token: string;

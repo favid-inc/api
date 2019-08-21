@@ -32,3 +32,14 @@ export interface PayOrder extends Action {
   };
   Response: DirectCharge["Response"]["data"];
 }
+
+export interface LikeOrder extends Action {
+  Request: {
+    url: "/LikeOrder";
+    method: "POST";
+    data: {
+      orderId: Order["id"];
+    };
+  };
+  Response: void;
+}
