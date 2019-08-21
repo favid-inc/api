@@ -1,4 +1,4 @@
-import { DirectCharge } from "../iugu";
+import { DirectCharge, InvoiceStatusChanged } from "../iugu";
 import { Model } from "../model";
 
 export const ORDER = "Order";
@@ -13,6 +13,8 @@ export interface Order extends Model {
   isGift?: boolean;
   iuguInvoiceId?: string;
   iuguInvoiceMetadata?: DirectCharge["Response"]["data"];
+  iuguInvoiceStatusChangedDate?: number;
+  iuguInvoiceStatusChangedMetadata?: InvoiceStatusChanged["Request"]["body"];
   paymentStatus?: OrderPaymentStatus;
   price?: number;
   receiverName?: string;

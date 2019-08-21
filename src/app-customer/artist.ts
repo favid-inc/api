@@ -9,7 +9,7 @@ export interface ListArtistsGroupingByMainCategory extends Action {
     method: "GET";
   };
   Response: {
-    [mainCategory: string]: Array<Artist & { rate: Rate; rates: Rate; follower: boolean; followers: number }>;
+    [mainCategory: string]: Array<Artist & { rate?: Rate; rates?: Rate; follower?: boolean; followers?: number }>;
   };
 }
 

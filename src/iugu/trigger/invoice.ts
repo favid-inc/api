@@ -1,14 +1,13 @@
-import { AxiosRequestConfig } from "axios";
 import { OrderPaymentStatus } from "../../model";
 
 export interface InvoiceStatusChanged {
   Request: Request;
 }
 
-type Request = AxiosRequestConfig & {
+interface Request {
   url: "/InvoiceStatusChanged";
   method: "POST";
-  data: {
+  body: {
     event: "invoice.status_changed";
     data: {
       id: string;
@@ -17,4 +16,4 @@ type Request = AxiosRequestConfig & {
       subscription_id?: string;
     };
   };
-};
+}

@@ -14,7 +14,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Artist">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="500" y="160"/>
+	<position x="520" y="140"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -29,6 +29,18 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</column>
 	<column name="email">
 		<type name="varchar" length="255"/>
+	</column>
+	<column name="iuguSubAccountId">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="iuguSubAccountMetadata">
+		<type name="jsonb" length="255"/>
+	</column>
+	<column name="iuguApiTokenValue">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="iuguApiTokenMetadata">
+		<type name="jsonb" length="0"/>
 	</column>
 	<column name="location">
 		<type name="varchar" length="255"/>
@@ -56,12 +68,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</column>
 	<column name="userUid">
 		<type name="varchar" length="255"/>
-	</column>
-	<column name="iuguSubAccountId">
-		<type name="varchar" length="255"/>
-	</column>
-	<column name="iuguSubAccountMetadata">
-		<type name="jsonb" length="255"/>
 	</column>
 	<constraint name="Artist_pk" type="pk-constr" table="public.&quot;Artist&quot;">
 		<columns names="id" ref-type="src-columns"/>
@@ -93,10 +99,37 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="artistPhotoUri">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="customerName">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="customerUserUid">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="customerName">
+	<column name="instructions">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="isGift">
+		<type name="bool" length="0"/>
+	</column>
+	<column name="iuguInvoiceId">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="iuguInvoiceMetadata">
+		<type name="jsonb" length="0"/>
+	</column>
+	<column name="iuguInvoiceStatusChangedDate">
+		<type name="int8" length="0"/>
+	</column>
+	<column name="iuguInvoiceStatusChangedMetadata">
+		<type name="jsonb" length="0"/>
+	</column>
+	<column name="paymentStatus">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="price">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="receiverName">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="status">
@@ -114,21 +147,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="statusFulfilledDate">
 		<type name="int8" length="0"/>
 	</column>
-	<column name="paymentStatus">
-		<type name="varchar" length="255"/>
-	</column>
-	<column name="instructions">
-		<type name="varchar" length="255"/>
-	</column>
-	<column name="isGift">
-		<type name="bool" length="0"/>
-	</column>
-	<column name="price">
-		<type name="numeric" length="0"/>
-	</column>
-	<column name="receiverName">
-		<type name="varchar" length="255"/>
-	</column>
 	<column name="videoUri">
 		<type name="varchar" length="255"/>
 	</column>
@@ -140,7 +158,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 
 	<customidxs object-type="column">
-		<object name="artistId" index="1"/>
+		<object name="artistId" index="2"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">

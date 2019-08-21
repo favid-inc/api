@@ -16,7 +16,7 @@ export interface DeclineOrder extends Action {
     url: "/DeclineOrder";
     method: "POST";
     query?: void;
-    data?: void;
+    data: Order;
   };
   Response: Order;
 }
