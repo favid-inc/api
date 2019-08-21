@@ -1,31 +1,28 @@
+import { DirectCharge } from "../iugu";
 import { Model } from "../model";
 
 export const ORDER = "Order";
 
 export interface Order extends Model {
-  artistId?: number;
   artistArtisticName?: string;
+  artistId?: number;
   artistPhotoUri?: string;
-
-  customerUserUid?: string;
   customerName?: string;
-  // customerPhoto?: string;
-
+  customerUserUid?: string;
+  instructions?: string;
+  isGift?: boolean;
+  iuguInvoiceId?: string;
+  iuguInvoiceMetadata?: DirectCharge["Response"]["data"];
+  paymentStatus?: OrderPaymentStatus;
+  price?: number;
+  receiverName?: string;
   status?: OrderStatus;
-  statusPlacedDate?: number;
   statusDeclinedDate?: number;
   statusDeclinedDescription?: string;
   statusFulfilledDate?: number;
-
-  paymentStatus?: OrderPaymentStatus;
-
-  instructions?: string;
-  isGift?: boolean;
-  price?: number;
-  receiverName?: string;
-
-  videoUri?: string;
+  statusPlacedDate?: number;
   videoThumbnailUri?: string;
+  videoUri?: string;
 }
 
 export enum OrderStatus {

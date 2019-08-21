@@ -1,3 +1,4 @@
+import { CreateSubAccount } from "../iugu/account/create-sub-account";
 import { ArtistCategory } from "./artist-category";
 import { Model } from "./model";
 
@@ -19,13 +20,7 @@ export interface Artist extends Model {
   userUid?: string;
 
   iuguSubAccountId?: string;
-  iuguSubAccountMetadata?: {
-    account_id?: string;
-    live_api_token?: string;
-    name?: string;
-    test_api_token?: string;
-    user_token?: string;
-  };
+  iuguSubAccountMetadata?: CreateSubAccount["Response"]["data"];
 }
 
 export enum ArtistStatus {
