@@ -1,15 +1,15 @@
 import { AxiosRequestConfig, AxiosResponse } from "axios";
 
-export interface RequestWithdrawAccount {
+export interface RequestWithdraw {
   Request: Request;
   Response: Response;
 }
 
 type Request = AxiosRequestConfig & {
-  url: "/accounts/id/request_withdraw";
+  url: "/accounts/:id/request_withdraw";
   method: "POST";
   data: {
-    amount: 1234;
+    amount: number;
   };
 };
 

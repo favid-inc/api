@@ -1,4 +1,4 @@
-import { Order, OrderStatus } from "../model";
+import { Order } from "../model";
 import { Action } from "./action";
 
 export interface ListOrders extends Action {
