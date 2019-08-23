@@ -8,7 +8,7 @@ export type SocialArtist = Artist & {
   rates?: ArtistRate;
   follower?: boolean;
   followers?: number;
-  orders: number;
+  orders?: number;
 };
 
 export interface ListArtistsGroupingByMainCategory extends Action {
