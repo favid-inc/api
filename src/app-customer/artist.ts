@@ -1,7 +1,15 @@
 import { Artist } from "../model";
 import { Action } from "./action";
 
-type Rate = 0 | 1 | 2 | 3 | 4 | 5;
+export type ArtistRate = 0 | 1 | 2 | 3 | 4 | 5;
+
+export type SocialArtist = Artist & {
+  rate?: ArtistRate;
+  rates?: ArtistRate;
+  follower?: boolean;
+  followers?: number;
+  orders: number;
+};
 
 export interface ListArtistsGroupingByMainCategory extends Action {
   Request: {
@@ -9,7 +17,7 @@ export interface ListArtistsGroupingByMainCategory extends Action {
     method: "GET";
   };
   Response: {
-    [mainCategory: string]: Array<Artist & { rate?: Rate; rates?: Rate; follower?: boolean; followers?: number }>;
+    [mainCategory: string]: SocialArtist[];
   };
 }
 
@@ -18,11 +26,11 @@ export interface RateArtist extends Action {
     url: "/RateArtist";
     method: "POST";
     data: {
-      rate: Rate;
-      artistId: Artist["id"];
+      rate: ArtistRate;
+      artistId: SocialArtist["id"];
     };
   };
-  Response: void;
+  Response: SocialArtist;
 }
 
 export interface FollowArtist extends Action {
@@ -30,8 +38,8 @@ export interface FollowArtist extends Action {
     url: "/FollowArtist";
     method: "POST";
     data: {
-      artistId: Artist["id"];
+      artistId: SocialArtist["id"];
     };
   };
-  Response: void;
+  Response: SocialArtist;
 }
