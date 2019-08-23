@@ -14,7 +14,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Artist">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="520" y="140"/>
+	<position x="540" y="160"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -22,7 +22,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="biography">
-		<type name="varchar" length="255"/>
+		<type name="varchar" length="512"/>
 	</column>
 	<column name="categories">
 		<type name="varchar" length="255" dimension="1"/>
@@ -35,12 +35,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</column>
 	<column name="iuguSubAccountMetadata">
 		<type name="jsonb" length="255"/>
-	</column>
-	<column name="iuguApiTokenValue">
-		<type name="varchar" length="255"/>
-	</column>
-	<column name="iuguApiTokenMetadata">
-		<type name="jsonb" length="0"/>
 	</column>
 	<column name="location">
 		<type name="varchar" length="255"/>
@@ -55,7 +49,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="photoUri">
-		<type name="varchar" length="255"/>
+		<type name="varchar" length="512"/>
 	</column>
 	<column name="registerStatus" default-value="'P'">
 		<type name="char" length="1"/>
@@ -148,10 +142,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="int8" length="0"/>
 	</column>
 	<column name="videoUri">
-		<type name="varchar" length="255"/>
+		<type name="varchar" length="512"/>
 	</column>
 	<column name="videoThumbnailUri">
-		<type name="varchar" length="255"/>
+		<type name="varchar" length="512"/>
 	</column>
 	<constraint name="Order_pk" type="pk-constr" table="public.&quot;Order&quot;">
 		<columns names="id" ref-type="src-columns"/>
