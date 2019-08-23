@@ -1,4 +1,4 @@
-import { GetAccountInfo, RequestWithdraw } from "../iugu/account";
+import { GetAccountInfo, RequestWithdraw } from "../iugu";
 import { Action } from "./action";
 
 export interface LoadWalletInfo extends Action {
@@ -8,7 +8,7 @@ export interface LoadWalletInfo extends Action {
     query?: void;
     data?: void;
   };
-  Response: GetAccountInfo["Response"];
+  Response: GetAccountInfo["Response"]["data"];
 }
 
 export interface RequestWithdraw extends Action {
@@ -20,5 +20,5 @@ export interface RequestWithdraw extends Action {
       amount: number;
     };
   };
-  Response: void;
+  Response: GetAccountInfo["Response"]["data"];
 }

@@ -8,7 +8,6 @@ export interface GetAccountInfo {
 type Request = AxiosRequestConfig & {
   url: "/accounts/:id";
   method: "GET";
-  data: void;
 };
 
 type Response = AxiosResponse<void> & {
