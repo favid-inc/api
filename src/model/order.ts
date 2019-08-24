@@ -1,11 +1,12 @@
 import { DirectCharge, InvoiceStatusChanged } from "../iugu";
 import { Model } from "../model";
+import { Artist } from "./artist";
 
 export const ORDER = "Order";
 
 export interface Order extends Model {
   artistArtisticName?: string;
-  artistId?: number;
+  artistId?: Artist["id"];
   artistPhotoUri?: string;
   customerName?: string;
   customerUserUid?: string;
