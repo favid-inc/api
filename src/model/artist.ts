@@ -34,21 +34,3 @@ export enum ArtistRegisterStatus {
   DENIED = "D",
   PENDING = "P",
 }
-
-export interface ArtistRate extends Model {
-  artistId?: number;
-  customerEmail?: string;
-  customerName?: string;
-  customerUserUid?: string;
-  date?: number;
-  message?: string;
-  value?: 0 | 1 | 2 | 3 | 4 | 5;
-}
-
-export interface ArtistFollower extends Model {
-  artistId?: number;
-  customerEmail?: string;
-  customerName?: string;
-  customerUserUid?: string;
-  date?: number;
-}
