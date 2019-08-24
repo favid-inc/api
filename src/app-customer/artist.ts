@@ -24,10 +24,7 @@ export interface RateArtist extends Action {
   Request: {
     url: "/RateArtist";
     method: "POST";
-    data: {
-      rate: ArtistRate;
-      artistId: SocialArtist["id"];
-    };
+    data: ArtistRate;
   };
   Response: SocialArtist;
 }
