@@ -1,16 +1,14 @@
-import { AxiosRequestConfig, AxiosResponse } from "axios";
-
 export interface GetAccountInfo {
   Request: Request;
   Response: Response;
 }
 
-type Request = AxiosRequestConfig & {
+interface Request {
   url: "/accounts/:id";
   method: "GET";
-};
+}
 
-type Response = AxiosResponse<void> & {
+interface Response {
   status: 200;
   data: {
     id: string;
@@ -67,7 +65,7 @@ type Response = AxiosResponse<void> & {
     configuration: Configuration;
     commissions: Commissions;
   };
-};
+}
 
 interface Commissions {
   cents?: any;

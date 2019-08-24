@@ -3,12 +3,14 @@ import { DirectCharge, PaymentToken } from "../iugu";
 import { Order } from "../model";
 import { Action } from "./action";
 
+export type SocialOrder = Order & { like?: boolean; likes?: number };
+
 export interface ListOrders extends Action {
   Request: {
     url: "/ListOrders";
     method: "GET";
   };
-  Response: Array<Order & { like?: boolean; likes?: number }>;
+  Response: SocialOrder[];
 }
 
 export interface PlaceOrder extends Action {
@@ -38,8 +40,8 @@ export interface LikeOrder extends Action {
     url: "/LikeOrder";
     method: "POST";
     data: {
-      orderId: Order["id"];
+      orderId: SocialOrder["id"];
     };
   };
-  Response: void;
+  Response: SocialOrder;
 }

@@ -1,11 +1,9 @@
-import { Artist } from "../model";
+import { Artist, ArtistRate } from "../model";
 import { Action } from "./action";
 
-export type ArtistRate = 0 | 1 | 2 | 3 | 4 | 5;
-
 export type SocialArtist = Artist & {
-  rate?: ArtistRate;
-  rates?: ArtistRate;
+  rate?: ArtistRate["value"];
+  rates?: ArtistRate["value"];
   follower?: boolean;
   followers?: number;
   orders?: number;

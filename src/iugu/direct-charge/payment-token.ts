@@ -1,11 +1,9 @@
-import { AxiosRequestConfig, AxiosResponse } from "axios";
-
 export interface PaymentToken {
   Request: Request;
   Response: Response;
 }
 
-type Request = AxiosRequestConfig & {
+interface Request {
   url: "/payment_token";
   method: "POST";
   data: {
@@ -21,39 +19,38 @@ type Request = AxiosRequestConfig & {
       year: string;
     };
   };
-};
+}
 
-type Response = AxiosResponse<void> &
-  (
-    | {
-        status: 200;
-        data: {
-          id: string;
-          method: "credit_card";
-          extra_info: {
-            bin: string;
-            brand: string;
-            display_number: string;
-            holder_name: string;
-            month: number;
-            year: number;
-          };
-          test: boolean;
+type Response =
+  | {
+      status: 200;
+      data: {
+        id: string;
+        method: "credit_card";
+        extra_info: {
+          bin: string;
+          brand: string;
+          display_number: string;
+          holder_name: string;
+          month: number;
+          year: number;
         };
-      }
-    | {
-        status: 400;
-        data: {
-          errors: "account_id invalido";
+        test: boolean;
+      };
+    }
+  | {
+      status: 400;
+      data: {
+        errors: "account_id invalido";
+      };
+    }
+  | {
+      status: 422;
+      data: {
+        errors: {
+          method: string[];
+          number: string[];
+          year: string[];
         };
-      }
-    | {
-        status: 422;
-        data: {
-          errors: {
-            method: string[];
-            number: string[];
-            year: string[];
-          };
-        };
-      });
+      };
+    };

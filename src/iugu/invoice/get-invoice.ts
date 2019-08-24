@@ -1,19 +1,17 @@
-import { AxiosRequestConfig, AxiosResponse } from "axios";
-
 export interface GetInvoice {
   Request: Request;
   Response: Response;
 }
 
-type Request = AxiosRequestConfig & {
+interface Request {
   url: "/invoices/:id";
   method: "GET";
-};
+}
 
-type Response = AxiosResponse<void> & {
+interface Response {
   status: 200;
   data: ResponseData;
-};
+}
 
 interface ResponseData {
   bank_slip: BankSlip;

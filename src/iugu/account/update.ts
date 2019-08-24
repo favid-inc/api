@@ -1,11 +1,9 @@
-import { AxiosRequestConfig, AxiosResponse } from "axios";
-
 export interface UpdateAccount {
   Request: Request;
   Response: Response;
 }
 
-type Request = AxiosRequestConfig & {
+interface Request {
   url: "/accounts/:id/request_verification";
   method: "POST";
   data: {
@@ -26,9 +24,9 @@ type Request = AxiosRequestConfig & {
       telephone?: string;
     };
   };
-};
+}
 
-type Response = AxiosResponse<void> & {
+interface Response {
   status: 200;
   data: {
     account_id: string;
@@ -37,4 +35,4 @@ type Response = AxiosResponse<void> & {
     test_api_token: string;
     user_token: string;
   };
-};
+}
