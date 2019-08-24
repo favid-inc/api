@@ -46,11 +46,3 @@ export enum OrderPaymentStatus {
   IN_PROTEST = "in_protest",
   CHARGEBACK = "chargeback",
 }
-
-export interface OrderLike extends Model {
-  customerEmail?: string;
-  customerName?: string;
-  customerUserUid?: string;
-  date?: number;
-  orderId?: number;
-}
