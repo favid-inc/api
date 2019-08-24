@@ -47,9 +47,9 @@ export enum OrderPaymentStatus {
 }
 
 export interface OrderLike extends Model {
-  customerEmail: string;
-  customerName: string;
-  customerUserUid: string;
-  date: number;
-  orderId: number;
+  customerEmail?: string;
+  customerName?: string;
+  customerUserUid?: string;
+  date?: number;
+  orderId?: number;
 }
