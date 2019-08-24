@@ -6,6 +6,10 @@ export interface GetAccountInfo {
 interface Request {
   url: "/accounts/:id";
   method: "GET";
+  auth: {
+    password: "";
+    username: string;
+  };
 }
 
 interface Response {

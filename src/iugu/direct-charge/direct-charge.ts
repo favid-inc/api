@@ -8,6 +8,10 @@ export type DirectChargeMethod = "bank_slip";
 interface Request {
   url: "/charge";
   method: "POST";
+  auth: {
+    password: "";
+    username: string;
+  };
   data: {
     restrict_payment_method: boolean;
     customer_id?: string;

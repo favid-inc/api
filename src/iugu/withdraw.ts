@@ -6,6 +6,10 @@ export interface RequestWithdraw {
 interface Request {
   url: "/accounts/:id/request_withdraw";
   method: "POST";
+  auth: {
+    password: "";
+    username: string;
+  };
   data: {
     amount: number;
   };
