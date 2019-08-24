@@ -40,6 +40,17 @@ export interface FollowArtist extends Action {
   Response: SocialArtist;
 }
 
+export interface UnFollowArtist extends Action {
+  Request: {
+    url: "/UnFollowArtist";
+    method: "POST";
+    data: {
+      artistId: SocialArtist["id"];
+    };
+  };
+  Response: SocialArtist;
+}
+
 export interface ListArtistOrders extends Action {
   Request: {
     url: "/ListArtistOrders";

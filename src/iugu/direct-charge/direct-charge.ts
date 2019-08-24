@@ -98,6 +98,12 @@ type Response =
       };
     }
   | {
+      status: 409;
+      data: {
+        errors: string;
+      };
+    }
+  | {
       status: 422;
       data: {
         errors: {
