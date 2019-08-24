@@ -14,7 +14,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Artist">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="540" y="160"/>
+	<position x="620" y="200"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -71,7 +71,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="520" y="500"/>
+	<position x="620" y="520"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
@@ -83,7 +83,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Order">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="60" y="200"/>
+	<position x="0" y="220"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -167,7 +167,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 custom-color="#f27497"
 	 src-table="public.&quot;Artist&quot;"
 	 dst-table="public.&quot;Order&quot;"
-	 src-required="false" dst-required="false"/>
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="25.9456" y="13.2393"/>
+	</label>
+</relationship>
 
 <index name="Artist_userUid_idx" table="public.&quot;Artist&quot;"
 	 concurrent="false" unique="false" fast-update="false" buffering="false"
@@ -180,16 +184,28 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ArtistFollower">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="940" y="360"/>
+	<position x="1140" y="360"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="customerEmail">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="customerName">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="customerUserUid">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="date">
 		<type name="int8" length="0"/>
 	</column>
-	<column name="userUid">
-		<type name="varchar" length="255"/>
-	</column>
+	<constraint name="ArtistFollower_pk" type="pk-constr" table="public.&quot;ArtistFollower&quot;">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
 
 	<customidxs object-type="column">
-		<object name="artistId" index="0"/>
+		<object name="artistId" index="1"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
@@ -206,26 +222,41 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.&quot;ArtistFollower&quot;"
 	 src-required="false" dst-required="false">
 	<label ref-type="name-label">
-		<position x="117.008" y="-22.7607"/>
+		<position x="107.008" y="-29.7607"/>
 	</label>
 </relationship>
 
 <table name="ArtistRate">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="940" y="60"/>
+	<position x="1180" y="40"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="customerEmail">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="customerName">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="customerUserUid">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="date">
 		<type name="int8" length="0"/>
 	</column>
-	<column name="userUid">
+	<column name="message">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="value">
 		<type name="smallint" length="0"/>
 	</column>
+	<constraint name="ArtistRate_pk" type="pk-constr" table="public.&quot;ArtistRate&quot;">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
 
 	<customidxs object-type="column">
-		<object name="artistId" index="0"/>
+		<object name="artistId" index="1"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
@@ -242,23 +273,35 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.&quot;ArtistRate&quot;"
 	 src-required="false" dst-required="false">
 	<label ref-type="name-label">
-		<position x="108.508" y="57.2393"/>
+		<position x="-101.492" y="-29.7607"/>
 	</label>
 </relationship>
 
 <table name="OrderLike">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="120" y="40"/>
+	<position x="0" y="0"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="customerEmail">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="customerName">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="customerUserUid">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="date">
 		<type name="int8" length="0"/>
 	</column>
-	<column name="userUid">
-		<type name="varchar" length="255"/>
-	</column>
+	<constraint name="OrderLike_pk" type="pk-constr" table="public.&quot;OrderLike&quot;">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
 
 	<customidxs object-type="column">
-		<object name="orderId" index="1"/>
+		<object name="orderId" index="5"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
@@ -275,32 +318,44 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.&quot;OrderLike&quot;"
 	 src-required="false" dst-required="false">
 	<label ref-type="name-label">
-		<position x="110.164" y="-16.7591"/>
+		<position x="103.134" y="-17.2692"/>
 	</label>
 </relationship>
 
-<index name="ArtistRate_userUid_idx" table="public.&quot;ArtistRate&quot;"
+<index name="ArtistRate_customerUid_idx" table="public.&quot;ArtistRate&quot;"
 	 concurrent="false" unique="false" fast-update="false" buffering="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
-			<column name="&quot;userUid&quot;"/>
+			<column name="&quot;customerUserUid&quot;"/>
 		</idxelement>
 </index>
 
-<index name="OrderLike_userUid_idx" table="public.&quot;OrderLike&quot;"
+<index name="OrderLike_customerUid_idx" table="public.&quot;OrderLike&quot;"
 	 concurrent="false" unique="false" fast-update="false" buffering="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
-			<column name="&quot;userUid&quot;"/>
+			<column name="&quot;customerUserUid&quot;"/>
 		</idxelement>
 </index>
 
-<index name="ArtistFollower_userUid_idx" table="public.&quot;ArtistFollower&quot;"
+<index name="ArtistFollower_customerUid_idx" table="public.&quot;ArtistFollower&quot;"
 	 concurrent="false" unique="false" fast-update="false" buffering="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="&quot;artistId&quot;"/>
 		</idxelement>
 </index>
+
+<table name="Admin">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="620" y="80"/>
+	<column name="id">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="email">
+		<type name="varchar" length="255"/>
+	</column>
+</table>
 
 </dbmodel>

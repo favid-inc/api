@@ -5,7 +5,7 @@ export interface LoadWalletInfo extends Action {
   Request: {
     url: "/LoadWalletInfo";
     method: "GET";
-    query?: void;
+    params?: void;
     data?: void;
   };
   Response: GetAccountInfo["Response"]["data"];
@@ -15,7 +15,7 @@ export interface RequestWithdraw extends Action {
   Request: {
     url: "/RequestWithdraw";
     method: "POST";
-    query?: void;
+    params?: void;
     data: {
       amount: number;
     };

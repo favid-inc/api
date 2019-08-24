@@ -4,7 +4,7 @@ export interface Action {
   Request: {
     url: string;
     method: "POST" | "GET" | "PUT" | "PATCH" | "DELETE";
-    query?: any;
+    params?: any;
     data?: any;
   };
   Response?: any;
@@ -21,7 +21,7 @@ export interface Post<T extends Model> extends Action {
 export interface Get<T extends Model> extends Action {
   Request: Action["Request"] & {
     method: "GET";
-    query?: FindArgs;
+    params?: FindArgs;
   };
   Response: { total: number; list: T[] };
 }
