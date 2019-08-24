@@ -1,5 +1,6 @@
 import { Artist, ArtistRate } from "../model";
 import { Action } from "./action";
+import { SocialOrder } from "./order";
 
 export type SocialArtist = Artist & {
   rate?: ArtistRate["value"];
@@ -40,4 +41,26 @@ export interface FollowArtist extends Action {
     };
   };
   Response: SocialArtist;
+}
+
+export interface ListArtistOrders extends Action {
+  Request: {
+    url: "/ListArtistOrders";
+    method: "GET";
+    params: {
+      artistId: SocialArtist["id"];
+    };
+  };
+  Response: SocialOrder[];
+}
+
+export interface ListArtistRates extends Action {
+  Request: {
+    url: "/ListArtistRates";
+    method: "GET";
+    params: {
+      artistId: SocialArtist["id"];
+    };
+  };
+  Response: ArtistRate[];
 }
