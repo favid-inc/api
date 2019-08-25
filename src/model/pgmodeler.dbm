@@ -103,7 +103,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="instructions">
-		<type name="varchar" length="255"/>
+		<type name="varchar" length="512"/>
 	</column>
 	<column name="isGift">
 		<type name="bool" length="0"/>
@@ -380,10 +380,16 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="timestamp" length="0"/>
 	</column>
 	<column name="url">
-		<type name="varchar" length="512"/>
+		<type name="varchar" length="2048"/>
+	</column>
+	<column name="method">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="headers">
+		<type name="varchar" length="2048"/>
 	</column>
 	<column name="params">
-		<type name="varchar" length="1024"/>
+		<type name="varchar" length="2048"/>
 	</column>
 	<column name="data">
 		<type name="varchar" length="2048"/>
