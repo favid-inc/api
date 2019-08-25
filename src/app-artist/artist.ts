@@ -36,3 +36,24 @@ export interface LoadProfile extends Action {
   };
   Response: Artist;
 }
+
+export interface ApplySponsorship extends Action {
+  Request: {
+    url: "/ApplySponsorship";
+    params: {
+      s1: string;
+      s2: string;
+      s3: string;
+      s4: string;
+    };
+  } & {
+    method: "GET";
+    body?: void;
+  } & {
+    method: "POST";
+    body: {
+      email: string;
+      password: string;
+    };
+  };
+}

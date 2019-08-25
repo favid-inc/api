@@ -72,24 +72,3 @@ export interface ListArtistRates extends Action {
   };
   Response: ArtistRate[];
 }
-
-export interface SponsorApplication extends Action {
-  Request: {
-    url: "/SponsorApplication";
-    params: {
-      s1: string;
-      s2: string;
-      s3: string;
-      s4: string;
-    };
-  } & {
-    method: "GET";
-    body?: void;
-  } & {
-    method: "POST";
-    body: {
-      email: string;
-      password: string;
-    };
-  };
-}
