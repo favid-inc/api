@@ -20,6 +20,7 @@ export interface Artist extends Model {
   registerStatus?: ArtistRegisterStatus;
   status?: ArtistStatus;
   userUid?: string;
+  videoUri?: string;
 }
 
 export enum ArtistStatus {
