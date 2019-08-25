@@ -1,4 +1,4 @@
-export * from "./administrador";
+export * from "./administrator";
 export * from "./artist-category";
 export * from "./artist-follower";
 export * from "./artist-rate";
