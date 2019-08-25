@@ -29,6 +29,15 @@ export interface UploadProfilePhoto extends Action {
   Response: Artist;
 }
 
+export interface UploadProfileVideo extends Action {
+  Request: {
+    url: "/UploadProfileVideo";
+    method: "POST";
+    data: FormData;
+  };
+  Response: Artist;
+}
+
 export interface LoadProfile extends Action {
   Request: {
     url: "/LoadProfile";
