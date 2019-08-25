@@ -372,4 +372,22 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		</idxelement>
 </index>
 
+<table name="iuguTriggerLog">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="400" y="420"/>
+	<column name="date" default-value="current_timestamp">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="url">
+		<type name="varchar" length="512"/>
+	</column>
+	<column name="params">
+		<type name="varchar" length="1024"/>
+	</column>
+	<column name="data">
+		<type name="varchar" length="2048"/>
+	</column>
+</table>
+
 </dbmodel>
