@@ -37,9 +37,9 @@ export interface LoadProfile extends Action {
   Response: Artist;
 }
 
-export interface ApplySponsorship extends Action {
+export interface ApplyForSponsorship extends Action {
   Request: {
-    url: "/ApplySponsorship";
+    url: "/ApplyForSponsorship";
     params: {
       s1: string;
       s2: string;
