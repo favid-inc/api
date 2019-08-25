@@ -4,4 +4,5 @@ export const ADMINISTRATOR = "Administrator";
 
 export interface Administrator extends Model {
   email?: string;
+  userUid?: string;
 }

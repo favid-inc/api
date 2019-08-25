@@ -349,7 +349,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		</idxelement>
 </index>
 
-<table name="Admin">
+<table name="Administrator">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="620" y="80"/>
@@ -359,6 +359,17 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="email">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="userUid">
+		<type name="varchar" length="255"/>
+	</column>
 </table>
+
+<index name="Administrator_userUid_idx" table="public.&quot;Administrator&quot;"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="&quot;userUid&quot;"/>
+		</idxelement>
+</index>
 
 </dbmodel>
