@@ -63,6 +63,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="userUid">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="videoUri">
+		<type name="varchar" length="512"/>
+	</column>
 	<constraint name="Artist_pk" type="pk-constr" table="public.&quot;Artist&quot;">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
