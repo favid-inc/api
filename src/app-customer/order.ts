@@ -45,3 +45,14 @@ export interface LikeOrder extends Action {
   };
   Response: SocialOrder;
 }
+
+export interface UnLikeOrder extends Action {
+  Request: {
+    url: "/UnLikeOrder";
+    method: "POST";
+    data: {
+      orderId: SocialOrder["id"];
+    };
+  };
+  Response: SocialOrder;
+}
