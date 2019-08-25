@@ -40,9 +40,9 @@ export interface FollowArtist extends Action {
   Response: SocialArtist;
 }
 
-export interface UnFollowArtist extends Action {
+export interface UnfollowArtist extends Action {
   Request: {
-    url: "/UnFollowArtist";
+    url: "/UnfollowArtist";
     method: "POST";
     data: {
       artistId: SocialArtist["id"];
