@@ -26,7 +26,7 @@ export interface FulfillOrder extends Action {
     url: "/FulfillOrder";
     method: "POST";
     params?: void;
-    data: FormData;
+    data: Order;
   };
   Response: Order;
 }
