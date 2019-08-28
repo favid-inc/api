@@ -24,7 +24,7 @@ export interface UploadProfilePhoto extends Action {
   Request: {
     url: "/UploadProfilePhoto";
     method: "POST";
-    data: FormData;
+    data: Artist;
   };
   Response: Artist;
 }
@@ -33,7 +33,7 @@ export interface UploadProfileVideo extends Action {
   Request: {
     url: "/UploadProfileVideo";
     method: "POST";
-    data: FormData;
+    data: Artist;
   };
   Response: Artist;
 }
@@ -54,6 +54,7 @@ export interface ApplyForSponsorship extends Action {
       s2: string;
       s3: string;
       s4: string;
+      s5: string;
     };
   } & {
     method: "GET";
