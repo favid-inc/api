@@ -1,7 +1,7 @@
 import { Artist } from "../model";
 import { Action } from "./action";
 
-export type UPLOAD_TEMP_DIR = "Artist/:userUid/temp";
+export type ARTIST_UPLOAD_DIR = "Artist/:userUid/temp";
 
 export interface ClaimProfile extends Action {
   Request: {
