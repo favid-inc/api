@@ -21,6 +21,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="artisticName">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="artistAffiliatedId">
+		<type name="integer" length="0"/>
+	</column>
 	<column name="biography">
 		<type name="varchar" length="512"/>
 	</column>
@@ -74,7 +77,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="620" y="520"/>
+	<position x="620" y="560"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
