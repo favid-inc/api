@@ -48,15 +48,14 @@ export interface LoadProfile extends Action {
   Response: Artist;
 }
 
-export interface ApplyForSponsorship extends Action {
+export interface ApplyForAffiliation extends Action {
   Request: {
-    url: "/ApplyForSponsorship";
+    url: "/ApplyForAffiliation";
     params: {
       s1: string;
       s2: string;
       s3: string;
       s4: string;
-      s5: string;
     };
   } & {
     method: "GET";
