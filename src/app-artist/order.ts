@@ -1,32 +1,31 @@
 import { Order } from "../model";
 import { Action } from "./action";
 
-export interface ListOrders extends Action {
-  Request: {
+export type ListOrders = Action<
+  {
     url: "/ListOrders";
     method: "GET";
     params?: void;
     data?: void;
-  };
-  Response: Order[];
-}
+  },
+  Order[]
+>;
 
-export interface DeclineOrder extends Action {
-  Request: {
+export type DeclineOrder = Action<
+  {
     url: "/DeclineOrder";
     method: "POST";
     params?: void;
     data: Order;
-  };
-  Response: Order;
-}
+  },
+  Order
+>;
 
-export interface FulfillOrder extends Action {
-  Request: {
+export type FulfillOrder = Action<
+  {
     url: "/FulfillOrder";
     method: "POST";
-    params?: void;
     data: Order;
-  };
-  Response: Order;
-}
+  },
+  Order
+>;

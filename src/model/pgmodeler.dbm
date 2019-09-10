@@ -33,12 +33,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="email">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="iuguSubAccountId">
-		<type name="varchar" length="255"/>
-	</column>
-	<column name="iuguSubAccountMetadata">
-		<type name="jsonb" length="255"/>
-	</column>
 	<column name="location">
 		<type name="varchar" length="255"/>
 	</column>
@@ -59,6 +53,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</column>
 	<column name="status" not-null="true" default-value="'I'">
 		<type name="char" length="1"/>
+	</column>
+	<column name="pagarMeRecipientId">
+		<type name="varchar" length="255"/>
 	</column>
 	<column name="price">
 		<type name="numeric" length="0"/>
@@ -398,5 +395,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="varchar" length="2048"/>
 	</column>
 </table>
+
+<index name="Artist_pagarMeRecipientId" table="public.&quot;Artist&quot;"
+	 concurrent="false" unique="true" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="&quot;pagarMeRecipientId&quot;"/>
+		</idxelement>
+</index>
 
 </dbmodel>

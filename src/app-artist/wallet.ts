@@ -1,24 +1,30 @@
-import { GetAccountInfo, RequestWithdraw } from "../iugu";
+import { Balance, BankAccount, Recipient } from "../pagar-me";
 import { Action } from "./action";
 
-export interface LoadWalletInfo extends Action {
+export interface CreateRecipient {
   Request: {
-    url: "/LoadWalletInfo";
-    method: "GET";
-    params?: void;
-    data?: void;
+    url: "/CreateRecipient";
+    method: "POST";
+    data?: BankAccount;
   };
-  Response: GetAccountInfo["Response"]["data"];
+  Response: Recipient;
 }
 
-export interface RequestWithdraw extends Action {
-  Request: {
+export type GetBalance = Action<
+  {
+    url: "/GetBalance";
+    method: "GET";
+  },
+  Balance
+>;
+
+export type RequestWithdraw = Action<
+  {
     url: "/RequestWithdraw";
     method: "POST";
-    params?: void;
     data: {
       amount: number;
     };
-  };
-  Response: GetAccountInfo["Response"]["data"];
-}
+  },
+  Balance
+>;

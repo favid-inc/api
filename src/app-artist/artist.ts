@@ -3,54 +3,57 @@ import { Action } from "./action";
 
 export type ARTIST_UPLOAD_DIRECTORY = "Artist/:userUid/temporary";
 
-export interface ClaimProfile extends Action {
-  Request: {
+export type ClaimProfile = Action<
+  {
     url: "/ClaimProfile";
     method: "POST";
     data: {
       idToken: string;
     };
-  };
-}
+  },
+  void
+>;
 
-export interface UpdateProfile extends Action {
-  Request: {
+export type UpdateProfile = Action<
+  {
     url: "/UpdateProfile";
     method: "POST";
     data: Artist;
-  };
-  Response: Artist;
-}
+  },
+  Artist
+>;
 
-export interface UploadProfilePhoto extends Action {
-  Request: {
+export type UploadProfilePhoto = Action<
+  {
     url: "/UploadProfilePhoto";
     method: "POST";
     data: Artist;
-  };
-  Response: Artist;
-}
+  },
+  Artist
+>;
 
-export interface UploadProfileVideo extends Action {
-  Request: {
+export type UploadProfileVideo = Action<
+  {
     url: "/UploadProfileVideo";
     method: "POST";
     data: Artist;
-  };
-  Response: Artist;
-}
+  },
+  Artist
+>;
 
-export interface LoadProfile extends Action {
-  Request: {
+export type LoadProfile = Action<
+  {
     url: "/LoadProfile";
     method: "GET";
-  };
-  Response: Artist;
-}
+  },
+  Artist
+>;
 
-export interface ApplyForAffiliation extends Action {
-  Request: {
+export type ApplyForAffiliation = Action<
+  {
     url: "/ApplyForAffiliation";
+  } & {
+    method: "GET";
     params: {
       s1: string;
       s2: string;
@@ -58,13 +61,11 @@ export interface ApplyForAffiliation extends Action {
       s4: string;
     };
   } & {
-    method: "GET";
-    body?: void;
-  } & {
     method: "POST";
     body: {
       email: string;
       password: string;
     };
-  };
-}
+  },
+  Artist
+>;
