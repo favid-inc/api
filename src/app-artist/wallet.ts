@@ -10,12 +10,15 @@ export interface CreateRecipient {
   Response: Recipient;
 }
 
-export type GetBalance = Action<
+export type LoadWalletInfo = Action<
   {
-    url: "/GetBalance";
+    url: "/LoadWalletInfo";
     method: "GET";
   },
-  Balance
+  {
+    balance: Balance;
+    bankAccount: BankAccount;
+  }
 >;
 
 export type RequestWithdraw = Action<
