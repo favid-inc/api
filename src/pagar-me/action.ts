@@ -1,9 +1,9 @@
 type Request = {
   url: string;
+  params?: any;
 } & (
   | {
       method: "GET";
-      params?: any;
     }
   | {
       method: "POST";
