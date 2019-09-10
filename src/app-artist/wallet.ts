@@ -16,8 +16,8 @@ export type LoadWalletInfo = Action<
     method: "GET";
   },
   {
-    balance: Balance;
-    bankAccount: BankAccount;
+    balance?: Balance;
+    bankAccount?: BankAccount;
   }
 >;
 
