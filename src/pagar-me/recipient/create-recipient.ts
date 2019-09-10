@@ -3,7 +3,7 @@ import { Action } from "../action";
 import { BankAccount } from "../bank-account";
 import { Recipient, RecipientTransferInterval } from "./recipient";
 
-export type CreateRecipientAction = Action<Request, Recipient>;
+export type CreateRecipient = Action<Request, Recipient>;
 
 interface Request {
   url: "/1/recipients";
