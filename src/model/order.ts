@@ -1,5 +1,5 @@
-import { DirectCharge, InvoiceStatusChanged } from "../iugu";
 import { Model } from "../model";
+import { DirectCharge, InvoiceStatusChanged } from "../pagar-me";
 import { Artist } from "./artist";
 
 export const ORDER = "Order";

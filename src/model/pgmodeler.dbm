@@ -372,7 +372,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		</idxelement>
 </index>
 
-<table name="iuguTriggerLog">
+<table name="RequestLog">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="400" y="420"/>
@@ -386,13 +386,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="headers">
-		<type name="varchar" length="2048"/>
+		<type name="jsonb" length="2048"/>
 	</column>
 	<column name="params">
-		<type name="varchar" length="2048"/>
+		<type name="jsonb" length="2048"/>
 	</column>
 	<column name="data">
-		<type name="varchar" length="2048"/>
+		<type name="jsonb" length="2048"/>
 	</column>
 </table>
 

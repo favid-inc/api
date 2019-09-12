@@ -1,5 +1,5 @@
-import { CreateSubAccount } from "../iugu";
 import { Artist } from "../model";
+import { CreateSubAccount } from "../pagar-me";
 
 import { Action } from "./action";
 

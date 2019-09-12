@@ -1,4 +1,4 @@
-import { DirectCharge, PaymentToken } from "../iugu";
+import { DirectCharge, PaymentToken } from "../pagar-me";
 
 import { Order } from "../model";
 import { Action } from "./action";

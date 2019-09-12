@@ -1,4 +1,4 @@
-import { CreateSubAccount } from "../iugu";
+import { CreateSubAccount } from "../pagar-me";
 import { ArtistCategory } from "./artist-category";
 import { Model } from "./model";
 
