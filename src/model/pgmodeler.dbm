@@ -363,7 +363,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		</idxelement>
 </index>
 
-<table name="RequestLog">
+<table name="PagarMePostBackLog">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="400" y="420"/>
