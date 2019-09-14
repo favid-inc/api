@@ -11,7 +11,7 @@ import { TransactionPaymentMethod } from "./payment-method";
 export type CreateTransaction = Action<Request, Transaction>;
 
 interface Request {
-  url: "/recipients";
+  url: "/transactions";
   method: "POST";
   data: RequestData;
 }
