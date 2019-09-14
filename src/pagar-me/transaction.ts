@@ -53,8 +53,8 @@ export type Transaction = {
   acquirer_response_code?: string;
   authorization_code?: string;
   soft_descriptor?: string;
-  tid?: string;
-  nsu?: string;
+  tid?: number;
+  nsu?: number;
   date_created?: string;
   date_updated?: string;
   amount?: number;
@@ -77,7 +77,7 @@ export type Transaction = {
   address?: TransactionAddress;
   documents?: TransactionDocument[];
   metadata: any;
-  split_rules: TransactionSplitRule[];
+  split_rules?: TransactionSplitRule[];
   antifraud_metadata: any;
   session: string;
 } & (
@@ -172,6 +172,6 @@ export interface TransactionAddress {
 }
 
 export interface TransactionDocument {
-  type: "individual" | "corporation";
+  type: "cpf" | "cnpj";
   number: string;
 }
