@@ -1,4 +1,4 @@
-import { Customer, Transaction, TransactionPaymentMethod } from "../pagar-me";
+import { CreateTransaction, Customer, TransactionPaymentMethod } from "../pagar-me";
 
 import { Order } from "../model";
 import { Action } from "./action";
@@ -32,7 +32,7 @@ export interface PayOrder extends Action {
       customer: Customer;
     };
   };
-  Response: Transaction;
+  Response: CreateTransaction["Response"];
 }
 
 export interface LikeOrder extends Action {
