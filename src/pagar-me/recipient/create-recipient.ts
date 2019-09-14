@@ -7,7 +7,7 @@ import { Recipient, RecipientTransferInterval } from "./recipient";
 export type CreateRecipient = Action<Request, Recipient>;
 
 interface Request {
-  url: "/1/recipients";
+  url: "/recipients";
   method: "POST";
   data: RequestData;
 }
