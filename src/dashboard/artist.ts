@@ -1,5 +1,4 @@
 import { Artist } from "../model";
-import { CreateSubAccount } from "../pagar-me";
 
 import { Action } from "./action";
 
@@ -9,7 +8,6 @@ export interface ApproveArtistRegister extends Action {
     method: "POST";
     data: {
       artist: Artist;
-      subAccount: CreateSubAccount["Request"]["data"];
     };
   };
   Response: Artist;

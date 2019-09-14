@@ -1,2 +1,2 @@
-export * from "./create-recipient";
-export * from "./recipient";
+export { CreateRecipient } from "./create-recipient";
+export { Recipient } from "./recipient";

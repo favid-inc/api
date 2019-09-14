@@ -1,20 +1,19 @@
-import { CreateSubAccount } from "../pagar-me";
+import { Recipient } from "../pagar-me";
 import { ArtistCategory } from "./artist-category";
 import { Model } from "./model";
 
 export const ARTIST = "Artist";
 
 export interface Artist extends Model {
-  artisticName?: string;
   artisticAffiliatedId?: string;
+  artisticName?: string;
   biography?: string;
   categories?: ArtistCategory[];
   email?: string;
-  iuguSubAccountId?: string;
-  iuguSubAccountMetadata?: CreateSubAccount["Response"]["data"];
   location?: string;
   mainCategory?: ArtistCategory;
   name?: string;
+  pagarMeRecipientId?: Recipient["id"];
   phoneNumber?: string;
   photoUri?: string;
   price?: number;

@@ -1,4 +1,4 @@
-import { DirectCharge, PaymentToken } from "../pagar-me";
+import { Customer, Transaction, TransactionPaymentMethod } from "../pagar-me";
 
 import { Order } from "../model";
 import { Action } from "./action";
@@ -28,11 +28,11 @@ export interface PayOrder extends Action {
     method: "POST";
     data: {
       order: Order;
-      paymentToken: PaymentToken["Request"]["data"];
-      directCharge: DirectCharge["Request"]["data"];
+      paymentMethod: TransactionPaymentMethod;
+      customer: Customer;
     };
   };
-  Response: DirectCharge["Response"]["data"];
+  Response: Transaction;
 }
 
 export interface LikeOrder extends Action {

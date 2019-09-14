@@ -1,4 +1,5 @@
 // https://docs.pagar.me/reference#criando-um-recebedor
+
 import { Action } from "../action";
 import { BankAccount } from "../bank-account";
 import { Recipient, RecipientTransferInterval } from "./recipient";

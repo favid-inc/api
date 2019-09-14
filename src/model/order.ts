@@ -1,5 +1,5 @@
 import { Model } from "../model";
-import { DirectCharge, InvoiceStatusChanged } from "../pagar-me";
+import { Transaction } from "../pagar-me";
 import { Artist } from "./artist";
 
 export const ORDER = "Order";
@@ -12,10 +12,7 @@ export interface Order extends Model {
   customerUserUid?: string;
   instructions?: string;
   isGift?: boolean;
-  iuguInvoiceId?: string;
-  iuguInvoiceMetadata?: DirectCharge["Response"]["data"];
-  iuguInvoiceStatusChangedDate?: number;
-  iuguInvoiceStatusChangedMetadata?: InvoiceStatusChanged["Request"]["body"];
+  pagarMeTransactionId?: Transaction["id"];
   paymentStatus?: OrderPaymentStatus;
   price?: number;
   receiverName?: string;
@@ -35,14 +32,4 @@ export enum OrderStatus {
   PLACED = "P",
 }
 
-export enum OrderPaymentStatus {
-  PENDING = "pending",
-  PAID = "paid",
-  CANCELED = "canceled",
-  PARTIALLY_PAID = "partially_paid",
-  REFUNDED = "refunded",
-  EXPIRED = "expired",
-  AUTHORIZED = "authorized",
-  IN_PROTEST = "in_protest",
-  CHARGEBACK = "chargeback",
-}
+export type OrderPaymentStatus = Transaction["status"];

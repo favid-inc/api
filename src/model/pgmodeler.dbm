@@ -18,11 +18,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
-	<column name="artisticName">
-		<type name="varchar" length="255"/>
-	</column>
 	<column name="artistAffiliatedId">
 		<type name="integer" length="0"/>
+	</column>
+	<column name="artisticName">
+		<type name="varchar" length="255"/>
 	</column>
 	<column name="biography">
 		<type name="varchar" length="512"/>
@@ -42,23 +42,23 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="name">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="pagarMeRecipientId">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="phoneNumber">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="photoUri">
 		<type name="varchar" length="512"/>
 	</column>
+	<column name="price">
+		<type name="numeric" length="0"/>
+	</column>
 	<column name="registerStatus" default-value="'P'">
 		<type name="char" length="1"/>
 	</column>
 	<column name="status" not-null="true" default-value="'I'">
 		<type name="char" length="1"/>
-	</column>
-	<column name="pagarMeRecipientId">
-		<type name="varchar" length="255"/>
-	</column>
-	<column name="price">
-		<type name="numeric" length="0"/>
 	</column>
 	<column name="userUid">
 		<type name="varchar" length="255"/>
@@ -108,17 +108,8 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="isGift">
 		<type name="bool" length="0"/>
 	</column>
-	<column name="iuguInvoiceId">
+	<column name="pagarMeTransactionId">
 		<type name="varchar" length="255"/>
-	</column>
-	<column name="iuguInvoiceMetadata">
-		<type name="jsonb" length="0"/>
-	</column>
-	<column name="iuguInvoiceStatusChangedDate">
-		<type name="int8" length="0"/>
-	</column>
-	<column name="iuguInvoiceStatusChangedMetadata">
-		<type name="jsonb" length="0"/>
 	</column>
 	<column name="paymentStatus">
 		<type name="varchar" length="255"/>
@@ -132,9 +123,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="status">
 		<type name="char" length="1"/>
 	</column>
-	<column name="statusPlacedDate">
-		<type name="int8" length="0"/>
-	</column>
 	<column name="statusDeclinedDate">
 		<type name="int8" length="0"/>
 	</column>
@@ -144,10 +132,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="statusFulfilledDate">
 		<type name="int8" length="0"/>
 	</column>
-	<column name="videoUri">
-		<type name="varchar" length="512"/>
+	<column name="statusPlacedDate">
+		<type name="int8" length="0"/>
 	</column>
 	<column name="videoThumbnailUri">
+		<type name="varchar" length="512"/>
+	</column>
+	<column name="videoUri">
 		<type name="varchar" length="512"/>
 	</column>
 	<constraint name="Order_pk" type="pk-constr" table="public.&quot;Order&quot;">
