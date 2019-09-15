@@ -1,5 +1,5 @@
 import { Model } from "../model";
-import { Transaction } from "../pagar-me";
+import { Transaction, TransactionStatus as OrderPaymentStatus } from "../pagar-me";
 import { Artist } from "./artist";
 
 export const ORDER = "Order";
@@ -32,4 +32,4 @@ export enum OrderStatus {
   PLACED = "P",
 }
 
-export type OrderPaymentStatus = Transaction["status"];
+export { OrderPaymentStatus };

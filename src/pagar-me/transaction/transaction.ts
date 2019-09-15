@@ -27,7 +27,7 @@ export type Transaction = {
   id?: number;
   cost?: number;
   postback_url?: string;
-  capture_method?: "magstripe" | "emv" | "ecommerce";
+  capture_method?: TransactionCaptureType;
   antifraud_score?: string;
   referer?: string;
   ip: string;
@@ -58,15 +58,34 @@ export type Transaction = {
       boleto_expiration_date: string;
     });
 
-export type TransactionStatus =
-  | "processing"
-  | "authorized"
-  | "paid"
-  | "refounded"
-  | "waiting_payment"
-  | "pending_refund"
-  | "refused";
+export enum TransactionStatus {
+  AUTHORIZED = "authorized",
+  PAID = "paid",
+  PENDING_REFUND = "pending_refund",
+  PROCESSING = "processing",
+  REFOUNDED = "refounded",
+  REFUSED = "refused",
+  WAITING_PAYMENT = "waiting_payment",
+}
 
-export type TransactionRefuseReason = "acquirer" | "antifraud" | "internal_error" | "no_acquirer" | "acquirer_timeout";
+export enum TransactionRefuseReason {
+  ACQUIRER = "acquirer",
+  ACQUIRER_TIMEOUT = "acquirer_timeout",
+  ANTIFRAUD = "antifraud",
+  INTERNAL_ERROR = "internal_error",
+  NO_ACQUIRER = "no_acquirer",
+}
 
-export type TransactionAcquirerName = "development" | "pagarme" | "stone" | "cielo" | "rede";
+export enum TransactionAcquirerName {
+  DEVELOPMENT = "development",
+  PAGARME = "pagarme",
+  STONE = "stone",
+  CIELO = "cielo",
+  REDE = "rede",
+}
+
+export enum TransactionCaptureType {
+  MAGSTRIPE = "magstripe",
+  EMV = "emv",
+  ECOMMERCE = "ecommerce",
+}
