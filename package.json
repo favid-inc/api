@@ -25,9 +25,7 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "@types/axios": "^0.14.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "tslint": "^5.20.0",
     "typescript": "^3.6.3"
