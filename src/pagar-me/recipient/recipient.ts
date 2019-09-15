@@ -16,10 +16,20 @@ export type Recipient = {
   date_created: string;
   date_updated: string;
   postback_url: string;
-  status: "registration" | "affiliation" | "active" | "refused" | "suspended" | "blocked" | "inactive";
+  status: RecipientStatus;
   status_reason?: string;
   metadata?: any;
 } & (RecipientTransferInterval);
+
+export enum RecipientStatus {
+  REGISTRATION = "registration",
+  AFFILIATION = "affiliation",
+  ACTIVE = "active",
+  REFUSED = "refused",
+  SUSPENDED = "suspended",
+  BLOCKED = "blocked",
+  INACTIVE = "inactive",
+}
 
 export type RecipientTransferInterval =
   | {
