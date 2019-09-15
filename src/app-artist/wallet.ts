@@ -5,7 +5,7 @@ export interface RequestWallet {
   Request: {
     url: "/RequestWallet";
     method: "POST";
-    data?: BankAccount;
+    data?: Recipient;
   };
   Response: Recipient;
 }
@@ -17,7 +17,7 @@ export type LoadWalletInfo = Action<
   },
   {
     balance?: Balance;
-    bankAccount?: BankAccount;
+    recipient?: Recipient;
   }
 >;
 
