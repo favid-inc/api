@@ -26,7 +26,7 @@ export interface Get<T extends Model> extends Action {
   Response: { total: number; list: T[] };
 }
 
-export interface ReadSingle<T extends Model> extends Action {
+export interface GetSingle<T extends Model> extends Action {
   Request: Action["Request"] & {
     method: "GET";
   };
