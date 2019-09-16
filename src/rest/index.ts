@@ -18,7 +18,7 @@ export interface Post<T extends Model> extends Action {
   Response: T;
 }
 
-export interface Read<T extends Model> extends Action {
+export interface Get<T extends Model> extends Action {
   Request: Action["Request"] & {
     method: "GET";
     params?: FindArgs;
