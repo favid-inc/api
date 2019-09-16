@@ -41,7 +41,7 @@ export interface GetCheckoutLink extends Action {
     url: "/GetCheckoutLink";
     method: "GET";
     params: {
-      orderId: string;
+      orderId: Order["id"];
     };
   };
   Response: string;
