@@ -1,4 +1,4 @@
-import { Address, CreateTransaction, Customer, TransactionPaymentMethod } from "../pagar-me";
+import { Address, CreateTransaction, Customer, Transaction, TransactionPaymentMethod } from "../pagar-me";
 
 import { Order } from "../model";
 import { Action } from "./action";
@@ -36,15 +36,15 @@ export interface PayOrder extends Action {
   Response: CreateTransaction["Response"];
 }
 
-export interface GetCheckoutLink extends Action {
+export interface ReadOrderTransaction extends Action {
   Request: {
-    url: "/GetCheckoutLink";
+    url: "/ReadOrderTransaction";
     method: "GET";
     params: {
       orderId: Order["id"];
     };
   };
-  Response: string;
+  Response: Transaction;
 }
 
 export interface LikeOrder extends Action {

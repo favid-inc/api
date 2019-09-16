@@ -18,7 +18,7 @@ export interface Post<T extends Model> extends Action {
   Response: T;
 }
 
-export interface Get<T extends Model> extends Action {
+export interface Read<T extends Model> extends Action {
   Request: Action["Request"] & {
     method: "GET";
     params?: FindArgs;
@@ -26,7 +26,7 @@ export interface Get<T extends Model> extends Action {
   Response: { total: number; list: T[] };
 }
 
-export interface GetSingle<T extends Model> extends Action {
+export interface ReadSingle<T extends Model> extends Action {
   Request: Action["Request"] & {
     method: "GET";
   };
