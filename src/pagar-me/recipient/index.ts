@@ -1,4 +1,4 @@
-export { CreateRecipient } from "./create-recipient";
-export { ReadRecipient } from "./get-recipient";
-export { ReadRecipientBalance } from "./get-recipient-balance";
+export { CreateRecipient } from "./create";
+export { ReadRecipient } from "./read";
+export { ReadRecipientBalance } from "./recipient-balance";
 export { Recipient } from "./recipient";
