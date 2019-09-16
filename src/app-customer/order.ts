@@ -58,9 +58,9 @@ export interface LikeOrder extends Action {
   Response: SocialOrder;
 }
 
-export interface UnLikeOrder extends Action {
+export interface UnlikeOrder extends Action {
   Request: {
-    url: "/UnLikeOrder";
+    url: "/UnlikeOrder";
     method: "POST";
     data: {
       orderId: SocialOrder["id"];
