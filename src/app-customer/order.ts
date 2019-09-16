@@ -36,6 +36,17 @@ export interface PayOrder extends Action {
   Response: CreateTransaction["Response"];
 }
 
+export interface GetCheckoutLink extends Action {
+  Request: {
+    url: "/GetCheckoutLink";
+    method: "GET";
+    params: {
+      orderId: string;
+    };
+  };
+  Response: string;
+}
+
 export interface LikeOrder extends Action {
   Request: {
     url: "/LikeOrder";
