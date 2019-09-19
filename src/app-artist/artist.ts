@@ -72,6 +72,7 @@ export type ApplyForAffiliationGet = Action<
       s2: string;
       s3: string;
       s4: string;
+      email?: string;
     };
   },
   void
