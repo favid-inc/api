@@ -49,9 +49,9 @@ export type LoadProfile = Action<
   Artist
 >;
 
-export type ApplyForAffiliation = ApplyForAffiliationForm | ApplyForAffiliationSubmition;
+export type ApplyForAffiliation = ApplyForAffiliationForm | ApplyForAffiliationSubmission;
 
-export type ApplyForAffiliationForm = Action<
+export type ApplyForAffiliationSubmission = Action<
   {
     url: "/ApplyForAffiliation";
     method: "POST";
@@ -63,15 +63,15 @@ export type ApplyForAffiliationForm = Action<
   void
 >;
 
-export type ApplyForAffiliationSubmition = Action<
+export type ApplyForAffiliationForm = Action<
   {
     url: "/ApplyForAffiliation";
     method: "GET";
     params: {
-      s1: string;
-      s2: string;
-      s3: string;
-      s4: string;
+      s1?: string;
+      s2?: string;
+      s3?: string;
+      s4?: string;
       email?: string;
     };
   },
