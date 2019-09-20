@@ -18,6 +18,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
+	<column name="affiliationCode" default-value="md5(random()::varchar)">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="artistAffiliatedId">
 		<type name="integer" length="0"/>
 	</column>
