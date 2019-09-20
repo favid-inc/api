@@ -5,6 +5,7 @@ import { Model } from "./model";
 export const ARTIST = "Artist";
 
 export interface Artist extends Model {
+  affiliationCode?: string;
   artisticAffiliatedId?: string;
   artisticName?: string;
   biography?: string;
