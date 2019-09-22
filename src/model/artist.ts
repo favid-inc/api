@@ -6,7 +6,7 @@ export const ARTIST = "Artist";
 
 export interface Artist extends Model {
   affiliationCode?: string;
-  artisticAffiliatedId?: string;
+  artistAffiliatedId?: string;
   artisticName?: string;
   biography?: string;
   categories?: ArtistCategory[];
