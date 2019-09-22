@@ -58,6 +58,7 @@ export type ApplyForAffiliationSubmission = Action<
     body: {
       email: string;
       password: string;
+      confirmPassword: string;
     };
   },
   void
@@ -72,7 +73,6 @@ export type ApplyForAffiliationForm = Action<
       s2?: string;
       s3?: string;
       s4?: string;
-      email?: string;
     };
   },
   void
