@@ -55,7 +55,7 @@ export type ApplyForAffiliationSubmission = Action<
   {
     url: "/ApplyForAffiliation";
     method: "POST";
-    body: {
+    data: {
       email?: string;
     };
   },
