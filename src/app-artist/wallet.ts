@@ -1,9 +1,9 @@
-import { Balance, BankAccount, Recipient } from "../pagar-me";
+import { Balance, Recipient } from "../pagar-me";
 import { Action } from "./action";
 
-export interface RequestWallet {
+export interface CreateWallet {
   Request: {
-    url: "/RequestWallet";
+    url: "/CreateWallet";
     method: "POST";
     data?: Recipient;
   };
