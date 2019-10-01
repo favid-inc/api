@@ -15,6 +15,7 @@ export interface Artist extends Model {
   mainCategory?: ArtistCategory;
   name?: string;
   pagarMeRecipientId?: Recipient["id"];
+  pagarMeRecipientStatus?: Recipient["status"];
   phoneNumber?: string;
   photoUri?: string;
   price?: number;

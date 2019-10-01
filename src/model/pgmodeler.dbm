@@ -48,6 +48,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="pagarMeRecipientId">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="pagarMeRecipientStatus">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="phoneNumber">
 		<type name="varchar" length="255"/>
 	</column>
