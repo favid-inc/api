@@ -5,7 +5,7 @@ export interface CreateWallet {
   Request: {
     url: "/CreateWallet";
     method: "POST";
-    data?: {
+    data: {
       registerInformation: CreateRecipient["Request"]["data"]["register_information"];
       bankAccount: BankAccount;
     };
