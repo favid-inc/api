@@ -1,11 +1,14 @@
-import { Balance, Recipient } from "../pagar-me";
+import { Balance, BankAccount, CreateRecipient, Recipient } from "../pagar-me";
 import { Action } from "./action";
 
 export interface CreateWallet {
   Request: {
     url: "/CreateWallet";
     method: "POST";
-    data?: Recipient;
+    data?: {
+      registerInformation: CreateRecipient["Request"]["data"]["register_information"];
+      bankAccount: BankAccount;
+    };
   };
   Response: Recipient;
 }

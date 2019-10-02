@@ -31,34 +31,27 @@ type RequestData = {
     }) &
   (RecipientTransferInterval);
 
-type RegisterInformation =
+type RegisterInformation = {
+  document_number: string;
+  email: string;
+  site_url?: string;
+  phone_numbers: Array<{
+    ddd: string;
+    number: string;
+    type: string;
+  }>;
+} & (
   | {
       type: "individual";
-      document_number: string;
       name: string;
-      site_url: string;
-      email: string;
-      phone_numbers: Array<{
-        ddd: string;
-        number: string;
-        type: string;
-      }>;
     }
   | {
       type: "corporation";
-      document_number: string;
       company_name: string;
-      email: string;
-      site_url: string;
-      phone_numbers: Array<{
-        ddd: string;
-        number: string;
-        type: string;
-      }>;
       managing_partners: Array<{
         type: string;
         document_number: string;
         email: string;
         name: string;
       }>;
-    };
+    });
