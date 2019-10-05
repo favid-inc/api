@@ -18,8 +18,34 @@ export type Recipient = {
   postback_url: string;
   status: RecipientStatus;
   status_reason?: string;
+  register_information: RegisterInformation;
   metadata?: any;
 } & (RecipientTransferInterval);
+
+export type RegisterInformation = {
+  document_number: string;
+  email: string;
+  site_url?: string;
+  phone_numbers: Array<{
+    ddd: string;
+    number: string;
+    type: string;
+  }>;
+} & (
+  | {
+      type: "individual";
+      name: string;
+    }
+  | {
+      type: "corporation";
+      company_name: string;
+      managing_partners: Array<{
+        type: string;
+        document_number: string;
+        email: string;
+        name: string;
+      }>;
+    });
 
 export enum RecipientStatus {
   REGISTRATION = "registration",

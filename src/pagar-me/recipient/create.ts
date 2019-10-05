@@ -2,7 +2,7 @@
 
 import { Action } from "../action";
 import { BankAccount } from "../bank-account";
-import { Recipient, RecipientTransferInterval } from "./recipient";
+import { Recipient, RecipientTransferInterval, RegisterInformation } from "./recipient";
 
 export type CreateRecipient = Action<Request, Recipient>;
 
@@ -30,28 +30,3 @@ type RequestData = {
       bank_account: BankAccount;
     }) &
   (RecipientTransferInterval);
-
-type RegisterInformation = {
-  document_number: string;
-  email: string;
-  site_url?: string;
-  phone_numbers: Array<{
-    ddd: string;
-    number: string;
-    type: string;
-  }>;
-} & (
-  | {
-      type: "individual";
-      name: string;
-    }
-  | {
-      type: "corporation";
-      company_name: string;
-      managing_partners: Array<{
-        type: string;
-        document_number: string;
-        email: string;
-        name: string;
-      }>;
-    });
