@@ -1,7 +1,5 @@
-import { Artist, ARTIST } from "../model";
+import { Artist } from "../model";
 import { Action } from "./action";
-
-export const ARTIST_UPLOAD_DIRECTORY = `${ARTIST}/:userUid/temporary`;
 
 export type ClaimProfile = Action<
   {

@@ -4,6 +4,8 @@ import { Model } from "./model";
 
 export const ARTIST = "Artist";
 
+export const ARTIST_UPLOAD_DIRECTORY = `${ARTIST}/:userUid/temporary`;
+
 export interface Artist extends Model {
   affiliationCode?: string;
   artistAffiliatedId?: string;
