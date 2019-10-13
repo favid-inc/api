@@ -63,7 +63,7 @@ export enum TransactionStatus {
   PAID = "paid",
   PENDING_REFUND = "pending_refund",
   PROCESSING = "processing",
-  REFOUNDED = "refounded",
+  REFUNDED = "refunded",
   REFUSED = "refused",
   WAITING_PAYMENT = "waiting_payment",
 }
