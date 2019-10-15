@@ -21,7 +21,7 @@ type RequestData = {
   soft_descriptor: string;
   capture: boolean;
 
-  split_rules: SplitRule[];
+  split_rules?: SplitRule[];
 
   billing: Billing;
   items: Item[];
