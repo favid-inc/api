@@ -1,4 +1,4 @@
-import { Recipient } from "../pagar-me";
+import { Recipient, RecipientStatus } from "../pagar-me";
 import { ArtistCategory } from "./artist-category";
 import { Model } from "./model";
 
@@ -11,16 +11,17 @@ export interface Artist extends Model {
   artistAffiliatedId?: string;
   artisticName?: string;
   biography?: string;
+  birthdate?: number;
   categories?: ArtistCategory[];
   email?: string;
   location?: string;
   mainCategory?: ArtistCategory;
   name?: string;
   pagarMeRecipientId?: Recipient["id"];
-  pagarMeRecipientStatus?: Recipient["status"];
   phoneNumber?: string;
   photoUri?: string;
   price?: number;
+  recipientStatus?: ArtistRecipientStatus;
   registerStatus?: ArtistRegisterStatus;
   status?: ArtistStatus;
   userUid?: string;
@@ -40,3 +41,5 @@ export enum ArtistRegisterStatus {
   INCOMPLETED = "I",
   PENDING = "P",
 }
+
+export type ArtistRecipientStatus = RecipientStatus;
