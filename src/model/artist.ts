@@ -38,7 +38,7 @@ export enum ArtistStatus {
 export enum ArtistRegisterStatus {
   APPROVED = "A",
   DENIED = "D",
-  INCOMPLETED = "I",
+  INCOMPLETE = "I",
   PENDING = "P",
 }
 
