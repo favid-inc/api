@@ -7,9 +7,10 @@ export const ORDER = "Order";
 export const ORDER_UPLOAD_DIRECTORY = `${ORDER}/:artistUserUId/:orderId`;
 
 export interface Order extends Model {
-  artistArtisticName?: string;
+  artistArtisticName?: Artist["artisticName"];
+  artistEmail?: Artist["email"];
   artistId?: Artist["id"];
-  artistPhotoUri?: string;
+  artistPhotoUri?: Artist["photoUri"];
   customerName?: string;
   customerUserUid?: string;
   instructions?: string;

@@ -102,6 +102,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="artistArtisticName">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="artistEmail">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="artistPhotoUri">
 		<type name="varchar" length="255"/>
 	</column>
@@ -155,7 +158,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 
 	<customidxs object-type="column">
-		<object name="artistId" index="2"/>
+		<object name="artistId" index="3"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
