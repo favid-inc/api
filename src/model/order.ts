@@ -11,6 +11,7 @@ export interface Order extends Model {
   artistEmail?: Artist["email"];
   artistId?: Artist["id"];
   artistPhotoUri?: Artist["photoUri"];
+  customerEmail?: string;
   customerName?: string;
   customerUserUid?: string;
   instructions?: string;

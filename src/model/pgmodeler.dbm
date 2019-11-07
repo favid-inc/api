@@ -108,6 +108,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="artistPhotoUri">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="customerEmail">
+		<type name="varchar" length="255"/>
+	</column>
 	<column name="customerName">
 		<type name="varchar" length="255"/>
 	</column>
