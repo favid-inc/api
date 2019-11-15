@@ -14,6 +14,7 @@ export interface Order extends Model {
   customerEmail?: string;
   customerName?: string;
   customerUserUid?: string;
+  dueDate?: number;
   instructions?: string;
   isGift?: boolean;
   pagarMeTransactionId?: Transaction["id"];

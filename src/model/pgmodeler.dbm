@@ -117,6 +117,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="customerUserUid">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="dueDate">
+		<type name="int8" length="0"/>
+	</column>
 	<column name="instructions">
 		<type name="varchar" length="512"/>
 	</column>
