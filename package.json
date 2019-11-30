@@ -1,6 +1,6 @@
 {
   "name": "@favid-inc/api",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "description": "API for Favid Project",
   "homepage": "https://github.com/favid-inc/api#readme",
   "repository": {
@@ -20,7 +20,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "npm install && rm -rf lib && tsc",
+    "build": "npm ci && rm -rf lib && tsc",
     "deploy": "npm publish",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "prepublishOnly": "npm run build"
