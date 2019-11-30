@@ -14,7 +14,7 @@ export interface PostRequest extends BaseRequest {
 
 export type Request = PostRequest | GetRequest;
 
-export interface Action<Req extends Request, Res = any> {
+export interface Action<Req extends Request = Request, Res = any> {
   Request: Req;
   Response: Res;
 }
