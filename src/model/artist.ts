@@ -23,6 +23,7 @@ export interface Artist extends Model {
   price?: number;
   recipientStatus?: ArtistRecipientStatus;
   registerStatus?: ArtistRegisterStatus;
+  slug?: string;
   status?: ArtistStatus;
   userUid?: string;
   videoUri?: string;

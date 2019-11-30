@@ -18,7 +18,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
-	<column name="affiliationCode" default-value="md5(random()::varchar)">
+	<column name="affiliationCode">
 		<type name="varchar" length="255"/>
 	</column>
 	<column name="artistAffiliatedId">
@@ -63,10 +63,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="recipientStatus">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="registerStatus" default-value="'P'">
+	<column name="registerStatus">
 		<type name="char" length="1"/>
 	</column>
-	<column name="status" not-null="true" default-value="'I'">
+	<column name="slug">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="status" not-null="true">
 		<type name="char" length="1"/>
 	</column>
 	<column name="userUid">
@@ -83,7 +86,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="640" y="540"/>
+	<position x="640" y="580"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
@@ -418,6 +421,14 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="&quot;affiliationCode&quot;"/>
+		</idxelement>
+</index>
+
+<index name="Artist_slug_idx" table="public.&quot;Artist&quot;"
+	 concurrent="false" unique="true" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="slug"/>
 		</idxelement>
 </index>
 
