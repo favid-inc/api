@@ -23,14 +23,3 @@ export type LoadWalletInfo = Action<
     recipient?: Recipient;
   }
 >;
-
-export type RequestWithdraw = Action<
-  {
-    url: "/RequestWithdraw";
-    method: "POST";
-    data: {
-      amount: number;
-    };
-  },
-  Balance
->;
