@@ -10,78 +10,75 @@ export type SocialArtist = Artist & {
   orders?: number;
 };
 
-export interface ListArtistsGroupingByMainCategory extends Action {
-  Request: {
-    url: "/ListArtistsGroupingByMainCategory";
-    method: "GET";
-  };
-  Response: {
-    [mainCategory: string]: SocialArtist[];
-  };
-}
+export type ListArtistsGroupingByMainCategory = Action<{
+  url: "/ListArtistsGroupingByMainCategory";
+  method: "GET";
+}, {
+  [mainCategory: string]: SocialArtist[];
+}>;
 
-export interface ReadArtistBySlug extends Action {
-  Request: {
+export type ReadArtistBySlug = Action<
+  {
     url: "/ReadArtistBySlug";
     method: "GET";
     params: {
-      artistSlug: SocialArtist["slug"];
+      artistSlug: Required<SocialArtist>["slug"];
     };
-  };
-  Response: {
+  },
+  {
     artist: SocialArtist;
-  };
-}
+  }
+>;
 
-export interface RateArtist extends Action {
-  Request: {
+export type RateArtist = Action<
+  {
     url: "/RateArtist";
     method: "POST";
     data: ArtistRate;
-  };
-  Response: SocialArtist;
-}
+  },
+  SocialArtist
+>;
 
-export interface FollowArtist extends Action {
-  Request: {
+export type FollowArtist = Action<
+  {
     url: "/FollowArtist";
     method: "POST";
     data: {
-      artistId: SocialArtist["id"];
+      artistId: Required<SocialArtist>["id"];
     };
-  };
-  Response: SocialArtist;
-}
+  },
+  SocialArtist
+>;
 
-export interface UnfollowArtist extends Action {
-  Request: {
+export type UnfollowArtist = Action<
+  {
     url: "/UnfollowArtist";
     method: "POST";
     data: {
-      artistId: SocialArtist["id"];
+      artistId: Required<SocialArtist>["id"];
     };
-  };
-  Response: SocialArtist;
-}
+  },
+  SocialArtist
+>;
 
-export interface ListArtistOrders extends Action {
-  Request: {
+export type ListArtistOrders = Action<
+  {
     url: "/ListArtistOrders";
     method: "GET";
     params: {
-      artistId: SocialArtist["id"];
+      artistId: Required<SocialArtist>["id"];
     };
-  };
-  Response: SocialOrder[];
-}
+  },
+  SocialOrder[]
+>;
 
-export interface ListArtistRates extends Action {
-  Request: {
+export type ListArtistRates = Action<
+  {
     url: "/ListArtistRates";
     method: "GET";
     params: {
-      artistId: SocialArtist["id"];
+      artistId: Required<SocialArtist>["id"];
     };
-  };
-  Response: ArtistRate[];
-}
+  },
+  ArtistRate[]
+>;

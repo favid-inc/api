@@ -5,25 +5,25 @@ import { Action } from "./action";
 
 export type SocialOrder = Order & { like?: boolean; likes?: number };
 
-export interface ListOrders extends Action {
-  Request: {
+export type ListOrders = Action<
+  {
     url: "/ListOrders";
     method: "GET";
-  };
-  Response: SocialOrder[];
-}
+  },
+  SocialOrder[]
+>;
 
-export interface PlaceOrder extends Action {
-  Request: {
+export type PlaceOrder = Action<
+  {
     url: "/PlaceOrder";
     method: "POST";
     data: Order;
-  };
-  Response: Order;
-}
+  },
+  Order
+>;
 
-export interface PayOrder extends Action {
-  Request: {
+export type PayOrder = Action<
+  {
     url: "/PayOrder";
     method: "POST";
     data: {
@@ -32,39 +32,39 @@ export interface PayOrder extends Action {
       order: Order;
       paymentMethod: TransactionPaymentMethod;
     };
-  };
-  Response: CreateTransaction["Response"];
-}
+  },
+  CreateTransaction["Response"]
+>;
 
-export interface ReadOrderTransaction extends Action {
-  Request: {
+export type ReadOrderTransaction = Action<
+  {
     url: "/ReadOrderTransaction";
     method: "GET";
     params: {
-      orderId: Order["id"];
+      orderId: Required<Order>["id"];
     };
-  };
-  Response: Transaction;
-}
+  },
+  Transaction
+>;
 
-export interface LikeOrder extends Action {
-  Request: {
+export type LikeOrder = Action<
+  {
     url: "/LikeOrder";
     method: "POST";
     data: {
-      orderId: SocialOrder["id"];
+      orderId: Required<SocialOrder>["id"];
     };
-  };
-  Response: SocialOrder;
-}
+  },
+  SocialOrder
+>;
 
-export interface UnlikeOrder extends Action {
-  Request: {
+export type UnlikeOrder = Action<
+  {
     url: "/UnlikeOrder";
     method: "POST";
     data: {
-      orderId: SocialOrder["id"];
+      orderId: Required<SocialOrder>["id"];
     };
-  };
-  Response: SocialOrder;
-}
+  },
+  SocialOrder
+>;
