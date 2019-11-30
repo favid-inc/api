@@ -1,4 +1,4 @@
-type AbstractRequest = {
+export type Request = {
   url: string;
   params?: any;
 } & (
@@ -10,7 +10,7 @@ type AbstractRequest = {
       data?: any;
     });
 
-export interface Action<Request extends AbstractRequest, Response> {
-  Request: Request;
-  Response: Response;
+export interface Action<Req extends Request, Res> {
+  Request: Req;
+  Response: Res;
 }
