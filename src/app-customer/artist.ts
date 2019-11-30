@@ -20,6 +20,19 @@ export interface ListArtistsGroupingByMainCategory extends Action {
   };
 }
 
+export interface ReadArtistBySlug extends Action {
+  Request: {
+    url: "/ReadArtistBySlug";
+    method: "GET";
+    params: {
+      artistSlug: SocialArtist["slug"];
+    };
+  };
+  Response: {
+    artist: SocialArtist;
+  };
+}
+
 export interface RateArtist extends Action {
   Request: {
     url: "/RateArtist";
