@@ -20,7 +20,8 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "npm ci && rm -rf lib && tsc",
+    "prebuild": "rm -rf lib",
+    "build": "tsc",
     "deploy": "npm publish",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "prepublishOnly": "npm run build"
