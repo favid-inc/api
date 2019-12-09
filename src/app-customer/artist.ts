@@ -25,9 +25,7 @@ export type ReadArtistBySlug = Action<
       artistSlug: Required<SocialArtist>["slug"];
     };
   },
-  {
-    artist: SocialArtist;
-  }
+  SocialArtist
 >;
 
 export type RateArtist = Action<
