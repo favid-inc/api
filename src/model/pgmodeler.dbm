@@ -14,15 +14,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Artist">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="640" y="140"/>
+	<position x="620" y="200"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
+	<column name="affiliatedDate">
+		<type name="int8" length="0"/>
+	</column>
 	<column name="affiliationCode">
 		<type name="varchar" length="255"/>
-	</column>
-	<column name="artistAffiliatedId">
-		<type name="integer" length="0"/>
 	</column>
 	<column name="artisticName">
 		<type name="varchar" length="255"/>
@@ -81,12 +81,20 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<constraint name="Artist_pk" type="pk-constr" table="public.&quot;Artist&quot;">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
+
+	<customidxs object-type="column">
+		<object name="affiliatedArtistid" index="2"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="AffiliatedArtist_fk" index="1"/>
+	</customidxs>
 </table>
 
 <table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="640" y="580"/>
+	<position x="620" y="660"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
@@ -175,6 +183,30 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</customidxs>
 </table>
 
+<relationship name="Artist_has_many_ArtistAffiliated" type="rel1n"
+	 src-col-pattern="affiliatedArtistid"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="Affiliated{st}_fk"
+	 custom-color="#d19c4c"
+	 src-table="public.&quot;Artist&quot;"
+	 dst-table="public.&quot;Artist&quot;"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="978.23" y="343.75"/>
+	<position x="978.23" y="189"/>
+	<position x="851.487" y="189"/>
+	</line>
+	<label ref-type="src-label">
+		<position x="7.77006" y="-55.325"/>
+	</label>
+	<label ref-type="dst-label">
+		<position x="20.4384" y="-18.15"/>
+	</label>
+	<label ref-type="name-label">
+		<position x="-67.8353" y="-17.15"/>
+	</label>
+</relationship>
+
 <relationship name="Artist_has_many_Order" type="rel1n"
 	 src-col-pattern="artistId"
 	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
@@ -236,6 +268,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 src-table="public.&quot;Artist&quot;"
 	 dst-table="public.&quot;ArtistFollower&quot;"
 	 src-required="false" dst-required="false">
+	<label ref-type="src-label">
+		<position x="63.8526" y="39.725"/>
+	</label>
 	<label ref-type="name-label">
 		<position x="107.008" y="-29.7607"/>
 	</label>
@@ -287,8 +322,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 src-table="public.&quot;Artist&quot;"
 	 dst-table="public.&quot;ArtistRate&quot;"
 	 src-required="false" dst-required="false">
+	<label ref-type="src-label">
+		<position x="63.8526" y="-20.275"/>
+	</label>
 	<label ref-type="name-label">
-		<position x="-105.795" y="-59.7607"/>
+		<position x="-85.7953" y="-79.7607"/>
 	</label>
 </relationship>
 

@@ -7,8 +7,9 @@ export const ARTIST = "Artist";
 export const ARTIST_UPLOAD_DIRECTORY = `${ARTIST}/:userUid/temporary`;
 
 export interface Artist extends Model {
+  affiliatedArtistId?: Model["id"];
+  affiliatedDate?: number;
   affiliationCode?: string;
-  artistAffiliatedId?: string;
   artisticName?: string;
   biography?: string;
   birthdate?: number;
