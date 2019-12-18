@@ -13,6 +13,17 @@ export type ListOrders = Action<
   SocialOrder[]
 >;
 
+export type ReadOrder = Action<
+  {
+    url: "/ReadOrder";
+    method: "GET";
+    params: {
+      orderId: Required<Order>["id"];
+    };
+  },
+  SocialOrder
+>;
+
 export type PlaceOrder = Action<
   {
     url: "/PlaceOrder";
