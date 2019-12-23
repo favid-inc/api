@@ -4,7 +4,7 @@ import { Artist } from "./artist";
 
 export const ORDER = "Order";
 
-export const ORDER_UPLOAD_DIRECTORY = `${ORDER}/:artistUserUId/:orderId`;
+export const ORDER_UPLOAD_DIRECTORY = `${ORDER}/:artistUserUid/:orderId`;
 
 export interface Order extends Model {
   artistArtisticName?: Artist["artisticName"];
