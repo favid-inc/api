@@ -5,8 +5,9 @@ export type DeleteArtistRate = Action<
   {
     url: "/DeleteArtistRate";
     method: "POST";
-  },
-  {
-    artistRateId: ArtistRate["id"],
+    data: {
+      artistRateId: ArtistRate["id"],
+    },
+    params?: void
   }
 >;
