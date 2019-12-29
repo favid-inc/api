@@ -1,6 +1,6 @@
 {
   "name": "@favid-inc/api",
-  "version": "6.4.2",
+  "version": "6.5.0",
   "description": "API for Favid Project",
   "homepage": "https://github.com/favid-inc/api#readme",
   "repository": {
@@ -20,16 +20,20 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "prebuild": "rm -rf lib",
-    "build": "tsc",
+    "prebuild": "rm -rf lib && npm run lint",
+    "build": "webpack",
     "deploy": "npm publish",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
+    "raw-loader": "^4.0.0",
+    "ts-loader": "^6.2.1",
     "tslint": "^5.20.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "engines": {
     "node": "8"
