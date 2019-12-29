@@ -39,6 +39,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="email">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="featured">
+		<type name="bool" length="0"/>
+	</column>
 	<column name="location">
 		<type name="varchar" length="255"/>
 	</column>
@@ -94,7 +97,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="620" y="660"/>
+	<position x="640" y="680"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
@@ -106,7 +109,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Order">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="0" y="220"/>
+	<position x="20" y="240"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -192,7 +195,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.&quot;Artist&quot;"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="978.23" y="343.75"/>
+		<position x="978.23" y="348.417"/>
 	<position x="978.23" y="189"/>
 	<position x="851.487" y="189"/>
 	</line>
@@ -371,7 +374,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.&quot;OrderLike&quot;"
 	 src-required="false" dst-required="false">
 	<label ref-type="name-label">
-		<position x="103.134" y="-17.2692"/>
+		<position x="-102.075" y="-16.9567"/>
 	</label>
 </relationship>
 
@@ -425,7 +428,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="PagarMePostbackLog">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="400" y="420"/>
+	<position x="380" y="480"/>
 	<column name="date" default-value="current_timestamp">
 		<type name="timestamp" length="0"/>
 	</column>

@@ -15,6 +15,7 @@ export interface Artist extends Model {
   birthdate?: number;
   categories?: ArtistCategory[];
   email?: string;
+  featured?: boolean;
   location?: string;
   mainCategory?: ArtistCategory;
   name?: string;
