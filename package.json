@@ -1,6 +1,6 @@
 {
   "name": "@favid-inc/api",
-  "version": "6.6.0",
+  "version": "6.6.1",
   "description": "API for Favid Project",
   "homepage": "https://github.com/favid-inc/api#readme",
   "repository": {
@@ -13,12 +13,10 @@
   "license": "UNLICENSED",
   "author": "Favid Team",
   "files": [
-    "index.js",
-    "index.d.ts",
     "lib"
   ],
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "lib/model/index.js",
+  "types": "lib/model/index.d.ts",
   "scripts": {
     "prebuild": "rm -rf lib && npm run lint",
     "build": "webpack",

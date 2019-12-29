@@ -7,7 +7,6 @@ module.exports = {
   entry: {
     'app-artist': './src/app-artist/index.ts',
     'app-customer': './src/app-customer/index.ts',
-    'index': './src/index.ts',
     'model': './src/model/index.ts',
     'pagar-me': './src/pagar-me/index.ts',
     'rest': './src/rest/index.ts',
