@@ -5,7 +5,8 @@ export type ListArtistRates = Action<
   {
     url: "/ListArtistRates";
     method: "GET";
-  }
+  },
+  ArtistRate[]
 >;
 
 export type DeleteArtistRate = Action<
