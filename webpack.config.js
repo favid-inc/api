@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require("path");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -25,6 +26,7 @@ module.exports = {
       },
     ]
   },
+  plugins: [new CopyPlugin([{ from: '**/*.d.ts', context: 'src/' }])],
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
   },

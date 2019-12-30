@@ -1,6 +1,6 @@
 {
   "name": "@favid-inc/api",
-  "version": "6.7.0",
+  "version": "6.7.1",
   "description": "API for Favid Project",
   "homepage": "https://github.com/favid-inc/api#readme",
   "repository": {
@@ -26,6 +26,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "copy-webpack-plugin": "^5.1.1",
     "raw-loader": "^4.0.0",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.0",
