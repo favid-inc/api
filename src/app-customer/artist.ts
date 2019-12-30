@@ -1,4 +1,4 @@
-import { Artist, ArtistRate } from "../model";
+import { Artist, ArtistCategory, ArtistRate } from "../model";
 import { Action } from "./action";
 import { SocialOrder } from "./order";
 
@@ -10,12 +10,29 @@ export type SocialArtist = Artist & {
   orders?: number;
 };
 
-export type ListArtistsGroupingByMainCategory = Action<{
-  url: "/ListArtistsGroupingByMainCategory";
-  method: "GET";
-}, {
-  [mainCategory: string]: SocialArtist[];
-}>;
+export type ListArtistsGroupingByMainCategory = Action<
+  {
+    url: "/ListArtistsGroupingByMainCategory";
+    method: "GET";
+  },
+  Record<ArtistCategory, SocialArtist[]>
+>;
+
+export type ListArtists = Action<
+  {
+    url: "/ListArtists";
+    method: "GET";
+  },
+  {
+    artists: SocialArtist[];
+    indexes: {
+      mainCategory: Record<ArtistCategory, number[]>;
+      category: Record<ArtistCategory, number[]>;
+      featured: number[];
+      other: number[];
+    }
+  }
+>;
 
 export type ReadArtistBySlug = Action<
   {
