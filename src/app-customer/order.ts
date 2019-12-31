@@ -33,6 +33,17 @@ export type PlaceOrder = Action<
   Order
 >;
 
+export type DeleteOrder = Action<
+  {
+    url: "/DeleteOrder";
+    method: "POST";
+    data: {
+      orderId: Required<Order>["id"];
+    };
+  },
+  void
+>;
+
 export type PayOrder = Action<
   {
     url: "/PayOrder";

@@ -14,7 +14,7 @@ export type DeleteArtistRate = Action<
     url: "/DeleteArtistRate";
     method: "POST";
     data: {
-      artistRateId: ArtistRate["id"],
+      artistRateId: Required<ArtistRate>["id"],
     }
   }
 >;
