@@ -5,6 +5,8 @@ export const ARTIST_RATE = "ArtistRate";
 
 export interface ArtistRate extends Model {
   artistId?: Artist["id"];
+  censored?: boolean;
+  censoredDate?: number;
   customerEmail?: string;
   customerName?: string;
   customerUserUid?: string;

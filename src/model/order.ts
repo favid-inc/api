@@ -22,6 +22,7 @@ export interface Order extends Model {
   price?: number;
   receiverName?: string;
   status?: OrderStatus;
+  statusCanceledDate?: number;
   statusDeclinedDate?: number;
   statusDeclinedDescription?: string;
   statusFulfilledDate?: number;

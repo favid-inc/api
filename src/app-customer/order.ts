@@ -33,9 +33,9 @@ export type PlaceOrder = Action<
   Order
 >;
 
-export type DeleteOrder = Action<
+export type CancelOrder = Action<
   {
-    url: "/DeleteOrder";
+    url: "/CancelOrder";
     method: "POST";
     data: {
       orderId: Required<Order>["id"];

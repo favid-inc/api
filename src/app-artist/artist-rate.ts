@@ -9,9 +9,9 @@ export type ListArtistRates = Action<
   ArtistRate[]
 >;
 
-export type DeleteArtistRate = Action<
+export type CensorArtistRate = Action<
   {
-    url: "/DeleteArtistRate";
+    url: "/CensorArtistRate";
     method: "POST";
     data: {
       artistRateId: Required<ArtistRate>["id"],
