@@ -18,15 +18,14 @@
   "main": "lib/model/index.js",
   "types": "lib/model/index.d.ts",
   "scripts": {
-    "prebuild": "rm -rf lib && npm run lint",
+    "prebuild": "rm -rf lib",
     "build": "webpack",
     "deploy": "npm publish",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run lint && npm run build -- --mode=production"
   },
   "dependencies": {},
   "devDependencies": {
-    "copy-webpack-plugin": "^5.1.1",
     "raw-loader": "^4.0.0",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.0",
