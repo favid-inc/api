@@ -14,7 +14,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Artist">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="620" y="200"/>
+	<position x="620" y="260"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -97,7 +97,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="ArtistCategory">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="640" y="680"/>
+	<position x="1000" y="580"/>
 	<column name="value" not-null="true">
 		<type name="varchar" length="32"/>
 	</column>
@@ -131,7 +131,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="customerUserUid">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="dueDate">
+	<column name="dueDateFulfillment">
+		<type name="int8" length="0"/>
+	</column>
+	<column name="dueDatePayment">
 		<type name="int8" length="0"/>
 	</column>
 	<column name="instructions">
@@ -198,9 +201,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.&quot;Artist&quot;"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="978.23" y="348.417"/>
-	<position x="978.23" y="189"/>
-	<position x="851.487" y="189"/>
+		<position x="978.23" y="408.417"/>
+	<position x="978.23" y="249"/>
+	<position x="851.487" y="249"/>
 	</line>
 	<label ref-type="src-label">
 		<position x="7.77006" y="-55.325"/>
@@ -262,7 +265,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</customidxs>
 
 	<customidxs object-type="constraint">
-		<object name="Artist_fk" index="0"/>
+		<object name="Artist_fk" index="1"/>
 	</customidxs>
 </table>
 
@@ -322,7 +325,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</customidxs>
 
 	<customidxs object-type="constraint">
-		<object name="Artist_fk" index="0"/>
+		<object name="Artist_fk" index="1"/>
 	</customidxs>
 </table>
 
@@ -338,7 +341,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<position x="63.8526" y="-20.275"/>
 	</label>
 	<label ref-type="name-label">
-		<position x="-85.7953" y="-79.7607"/>
+		<position x="4.2047" y="-69.7607"/>
 	</label>
 </relationship>
 
@@ -370,7 +373,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</customidxs>
 
 	<customidxs object-type="constraint">
-		<object name="Order_fk" index="0"/>
+		<object name="Order_fk" index="1"/>
 	</customidxs>
 </table>
 
@@ -414,8 +417,8 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Administrator">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="640" y="20"/>
-	<column name="id">
+	<position x="660" y="60"/>
+	<column name="id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
 	<column name="email">
@@ -424,13 +427,16 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="userUid">
 		<type name="varchar" length="255"/>
 	</column>
+	<constraint name="Administrator_pk" type="pk-constr" table="public.&quot;Administrator&quot;">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
 </table>
 
-<index name="Administrator_userUid_idx" table="public.&quot;Administrator&quot;"
+<index name="Administrator_email_idx" table="public.&quot;Administrator&quot;"
 	 concurrent="false" unique="false" fast-update="false" buffering="false"
 	 index-type="btree" factor="0">
-		<idxelement use-sorting="false">
-			<column name="&quot;userUid&quot;"/>
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="email"/>
 		</idxelement>
 </index>
 
@@ -479,6 +485,40 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="slug"/>
+		</idxelement>
+</index>
+
+<table name="Setting">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="380" y="20"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="key">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="value">
+		<type name="jsonb" length="0"/>
+	</column>
+	<constraint name="Setting_pk" type="pk-constr" table="public.&quot;Setting&quot;">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="Setting_key_idx" table="public.&quot;Setting&quot;"
+	 concurrent="false" unique="true" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="key"/>
+		</idxelement>
+</index>
+
+<index name="Administrator_userUid_idx" table="public.&quot;Administrator&quot;"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="&quot;userUid&quot;"/>
 		</idxelement>
 </index>
 

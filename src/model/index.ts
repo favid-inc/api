@@ -7,3 +7,4 @@ export * from "./model";
 export * from "./order-like";
 export * from "./order";
 export * from "./public-policies";
+export * from "./setting";
