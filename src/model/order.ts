@@ -11,6 +11,8 @@ export interface Order extends Model {
   artistEmail?: Artist["email"];
   artistId?: Artist["id"];
   artistPhotoUri?: Artist["photoUri"];
+  artistPrice?: Artist["price"];
+  billingAmount?: number;
   customerEmail?: string;
   customerName?: string;
   customerUserUid?: string;
@@ -20,8 +22,8 @@ export interface Order extends Model {
   isGift?: boolean;
   pagarMeTransactionId?: Transaction["id"];
   paymentStatus?: OrderPaymentStatus;
-  price?: number;
   receiverName?: string;
+  serviceTax?: number;
   status?: OrderStatus;
   statusCanceledDate?: number;
   statusDeclinedDate?: number;

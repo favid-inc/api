@@ -122,6 +122,12 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="artistPhotoUri">
 		<type name="varchar" length="255"/>
 	</column>
+	<column name="artistPrice">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="billingAmount">
+		<type name="numeric" length="0"/>
+	</column>
 	<column name="customerEmail">
 		<type name="varchar" length="255"/>
 	</column>
@@ -149,11 +155,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="paymentStatus">
 		<type name="varchar" length="255"/>
 	</column>
-	<column name="price">
-		<type name="numeric" length="0"/>
-	</column>
 	<column name="receiverName">
 		<type name="varchar" length="255"/>
+	</column>
+	<column name="serviceTax">
+		<type name="numeric" length="0"/>
 	</column>
 	<column name="status">
 		<type name="char" length="1"/>
