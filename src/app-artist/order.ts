@@ -6,7 +6,7 @@ export type ListOrders = Action<
     url: "/ListOrders";
     method: "GET";
     params?: {
-      orderStatus?: Order["status"];
+      orderStatus?: Order["status"] | Array<Order["status"]>;
     };
     data?: void;
   },
